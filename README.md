@@ -1,9 +1,7 @@
 # Programmeerproject
 
 Universiteit van Amsterdam 
-
 Minor programmeren, Programmeerproject
-
 Jessica Sam, 10752498
 
 ## Probleemstelling
@@ -12,6 +10,13 @@ De ontwikkeling die je doormaakt tussen de leeftijden van 15 en 30 jaar is zeer 
 
 ## Oplossing
 Om deze vraag te beantwoorden zal ik een aantal mijlpalen definiëren die de mate van ontwikkeling van jongeren weergeven. Het zal hier voor de leeftijd 15-20 voornamelijk gaan om seksueel gedrag en de woonsituatie (thuiswonend of uitwonend). Na deze leeftijd blijft de woonsituatie (thuiswonend kind, alleenwonend, samenwonend) een rol spelen, maar worden de arbeidssituatie (wel of niet studerend, wel of geen vaste baan) en de burgerlijke staat ook relevant. 
+
+Aan de hand van deze mijlpalen kun je een 'ontwikkelingsindex' creeëren, en bijvoorbeeld de ontwikkeling van jongeren van een bepaalde leeftijd vergelijken voor 2012 en 2017. 
+Ook is het mogelijk te visualiseren op welke leeftijd jongeren gemiddeld seksueel actief worden, zelfstandig gaan wonen, een vaste baan krijgen, gaan samenwonen en kinderen krijgen. 
+
+## Voorbeelden
+
+![zelfstandig wonende twintigers](https://github.com/jesscsam/programmeerproject/blob/master/twintigers-die-samenwone.jpeg)
 
 
 ## Benodigdheden
