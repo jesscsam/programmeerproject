@@ -17,7 +17,7 @@ Ook is het mogelijk te visualiseren op welke leeftijd jongeren gemiddeld seksuee
 ## Voorbeelden
 
 ![zelfstandig wonende twintigers](https://github.com/jesscsam/programmeerproject/blob/master/uithuis.jpg)
-![]()
+![onderwijs volgend](https://github.com/jesscsam/programmeerproject/blob/master/onderwijsvolgen.jpg)
 
 
 ## Benodigdheden
