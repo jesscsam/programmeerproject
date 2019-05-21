@@ -15,8 +15,8 @@ Om deze vraag te beantwoorden zal ik een aantal mijlpalen definiëren die de mat
 ## Benodigdheden
 Om deze visualisatie te maken zal ik verschillende datasets nodig hebben. 
 
-Ten eerste het seksueel gedrag van jongeren in 2012 en 2017 (leeftijd 15-25), via [data.overheid.nl](https://data.overheid.nl/dataset/47199-seksueel-gedrag--jongeren-van-12-tot-25-jaar--2017).
-Ten tweede de arbeidsdeelname van jongeren in 2012 en 2017 (leeftijd 15-30), via [opendata.cbs.nl](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/82309NED/table?dl=1E617).
-Ten derde de woonsituatie en burgerlijke staat van jongeren in 2012 en 2017 (leeftijd 15-20), via [opendata.cbs.nl](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/37620/table?dl=1E65A). 
+* Ten eerste het seksueel gedrag van jongeren in 2012 en 2017 (leeftijd 15-25), via [data.overheid.nl](https://data.overheid.nl/dataset/47199-seksueel-gedrag--jongeren-van-12-tot-25-jaar--2017).
+* Ten tweede de arbeidsdeelname van jongeren in 2012 en 2017 (leeftijd 15-30), via [opendata.cbs.nl](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/82309NED/table?dl=1E617).
+* Ten derde de woonsituatie en burgerlijke staat van jongeren in 2012 en 2017 (leeftijd 15-20), via [opendata.cbs.nl](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/37620/table?dl=1E65A). 
 
 De perioden zijn gekozen wegens de data over het seksuele gedrag van jongeren, welke de limiterende factor is en alleen beschikbaar is over de jaren 2012 en 2017. 
