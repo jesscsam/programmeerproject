@@ -14,6 +14,8 @@ Om deze vraag te beantwoorden zal ik een aantal mijlpalen definiëren die de mat
 Aan de hand van deze mijlpalen kun je een 'ontwikkelingsindex' creeëren, en bijvoorbeeld de ontwikkeling van jongeren van een bepaalde leeftijd vergelijken voor 2012 en 2017. 
 Ook is het mogelijk te visualiseren op welke leeftijd jongeren gemiddeld seksueel actief worden, zelfstandig gaan wonen, een vaste baan krijgen, gaan samenwonen en kinderen krijgen. 
 
+Verder weet ik nog niet wat voor visualisaties ik hiervoor ga gebruiken; ik moet wat langer met de data werken om daar een idee van te krijgen.
+
 ## Voorbeelden
 
 ![zelfstandig wonende twintigers](https://github.com/jesscsam/programmeerproject/blob/master/uithuis.jpg)
