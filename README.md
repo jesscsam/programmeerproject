@@ -15,3 +15,5 @@ Om deze vraag te beantwoorden zal ik een aantal mijlpalen definiëren die de mat
 ## Benodigdheden
 Om deze visualisatie te maken zal ik verschillende datasets nodig hebben. 
 
+Ten eerste het seksueel gedrag van jongeren in 2012 en 2017 (leeftijd 15-25), via [link](https://data.overheid.nl/dataset/47199-seksueel-gedrag--jongeren-van-12-tot-25-jaar--2017 "data.overheid.nl")
+
