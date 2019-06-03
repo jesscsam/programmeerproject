@@ -4,29 +4,29 @@ Universiteit van Amsterdam
 Minor programmeren, Programmeerproject
 Jessica Sam, 10752498
 
+# Disclaimer
+
+Ik heb tot nu toe verschillende ideeën onderzocht en geschetst, maar nog geen enkele zou voldoen aan de eisen of had mijn interesse. De ideeën die ik overwogen heb:
+- Sekswerk en prostitutie (niet genoeg data over te vinden, omdat het in veel landen illegaal en taboe is) 
+- Het 'volwassen worden' van 15- tot 30-jarigen en of ze in 2018 'eerder volwassen' zijn dan in 2012, aan de hand van verschillende indicatoren (lastig indicatoren definiëren, en verschil tussen 2012 en 2018 lijkt me niet interessant genoeg) 
+- De Nederlandse Veiligheidsmonitor (subjectieve veiligheid), vergeleken met daadwerkelijke geregistreerde criminaliteit. Veiligheidsmonitor data was helaas niet zo interessant. 
+- Energiecentrales over de hele wereld naar type energie en capaciteit. Niet echt een verhaal. 
+- Klantbeoordelingen van vliegtuigmaatschappijen 
+
+
 ## Probleemstelling
-De ontwikkeling die je doormaakt tussen de leeftijden van 15 en 30 jaar is zeer bepalend voor de rest van je leven. Wat zijn de mijlpalen die Nederlandse jongeren tussen deze leeftijden behalen, en is er verschil tussen de mate van ontwikkeling van jongeren in 2012 en 2017? 
+
 
 
 ## Oplossing
-Om deze vraag te beantwoorden zal ik een aantal mijlpalen definiëren die de mate van ontwikkeling van jongeren weergeven. Het zal hier voor de leeftijd 15-20 voornamelijk gaan om seksueel gedrag en de woonsituatie (thuiswonend of uitwonend). Na deze leeftijd blijft de woonsituatie (thuiswonend kind, alleenwonend, samenwonend) een rol spelen, maar worden de arbeidssituatie (wel of niet studerend, wel of geen vaste baan) en de burgerlijke staat ook relevant. 
 
-Aan de hand van deze mijlpalen kun je een 'ontwikkelingsindex' creeëren, en bijvoorbeeld de ontwikkeling van jongeren van een bepaalde leeftijd vergelijken voor 2012 en 2017. 
-Ook is het mogelijk te visualiseren op welke leeftijd jongeren gemiddeld seksueel actief worden, zelfstandig gaan wonen, een vaste baan krijgen, gaan samenwonen en kinderen krijgen. 
 
-Verder weet ik nog niet wat voor visualisaties ik hiervoor ga gebruiken; ik moet wat langer met de data werken om daar een idee van te krijgen.
+## Schets
 
-## Voorbeelden
-
-![zelfstandig wonende twintigers](https://github.com/jesscsam/programmeerproject/blob/master/uithuis.jpg)
-![onderwijs volgend](https://github.com/jesscsam/programmeerproject/blob/master/onderwijsvolgen.jpg)
 
 
 ## Benodigdheden
-Om deze visualisatie te maken zal ik verschillende datasets nodig hebben. 
 
-* Het seksueel gedrag van jongeren in 2012 en 2017 (leeftijd 15-25), via [data.overheid.nl](https://data.overheid.nl/dataset/47199-seksueel-gedrag--jongeren-van-12-tot-25-jaar--2017).
-* De arbeidsdeelname van jongeren in 2012 en 2017 (leeftijd 15-30), via [opendata.cbs.nl](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/82309NED/table?dl=1E617).
-* De woonsituatie en burgerlijke staat van jongeren in 2012 en 2017 (leeftijd 15-20), via [opendata.cbs.nl](https://opendata.cbs.nl/statline/#/CBS/nl/dataset/37620/table?dl=1E65A). 
+### Databronnen
 
-De perioden zijn gekozen wegens de data over het seksuele gedrag van jongeren, welke de limiterende factor is en alleen beschikbaar is over de jaren 2012 en 2017. 
+### Externe bronnen
