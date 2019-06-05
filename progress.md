@@ -1,7 +1,7 @@
 # Progress book
-## Jessica Sam, 10752498
-## Minor Programmeren, Programmeerproject
-## Universiteit van Amsterdam 
+Jessica Sam, 10752498
+Minor Programmeren, Programmeerproject
+Universiteit van Amsterdam 
 
 
 ### 04-06-2019 Onderwerpen en overwegingen
