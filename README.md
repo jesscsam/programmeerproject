@@ -21,10 +21,18 @@ If I have the time, I might create:
 
 ## Sketch
 
+![My project sketch](https://github.com/jesscsam/programmeerproject/blob/master/pictures/sketchklein.jpg)
 
+As you can see, the sunburst diagram is the main visualisation. It will be larger when not hand-drawn. ;-) 
+On page load (when the user has nothing selected yet), the pie chart will show the distribution of risk for all users and the bar chart will show the amount of comments posted per age group. 
 
 ## Prerequisites
 
 ### Data source
+All data is from one dataset publicly available on [Kaggle](https://www.kaggle.com/panoskostakos/online-sex-work). The data was collected at one moment in time and comprises 28,832 users of an online adult forum. 
 
 ### External sources
+For this project, I will need the following external resources: 
+- D3, version 5
+- The D3-tip library for tooltips in the bar chart 
+
