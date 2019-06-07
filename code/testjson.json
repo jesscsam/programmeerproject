@@ -1,0 +1,1335 @@
+{
+    "name": "flare",
+    "children": [
+        {
+            "name": "female",
+            "children": [
+                {
+                    "name": "Heterosexual",
+                    "children": [
+                        {
+                            "name": "Dominant",
+                            "size": 634
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 2480
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 529
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 42
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 60
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 41
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 99
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 661
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 307
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 373
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "Heterosexual",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 2480
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 529
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 42
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 60
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 41
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 99
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 661
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 307
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 373
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "Heterosexual",
+                    "children": [
+                        {
+                            "name": "Switch",
+                            "size": 529
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 42
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 60
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 41
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 99
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 661
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 307
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 373
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "Homosexual",
+                    "children": [
+                        {
+                            "name": "Dominant",
+                            "size": 42
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 60
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 41
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 99
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 661
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 307
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 373
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "Homosexual",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 60
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 41
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 99
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 661
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 307
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 373
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "Homosexual",
+                    "children": [
+                        {
+                            "name": "Switch",
+                            "size": 41
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 99
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 661
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 307
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 373
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bicurious",
+                    "children": [
+                        {
+                            "name": "Dominant",
+                            "size": 99
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 661
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 307
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 373
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bicurious",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 661
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 307
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 373
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bicurious",
+                    "children": [
+                        {
+                            "name": "Switch",
+                            "size": 307
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 373
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bisexual",
+                    "children": [
+                        {
+                            "name": "Dominant",
+                            "size": 373
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bisexual",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bisexual",
+                    "children": [
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "male",
+            "children": [
+                {
+                    "name": "Heterosexual",
+                    "children": [
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "Heterosexual",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "Heterosexual",
+                    "children": [
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "Homosexual",
+                    "children": [
+                        {
+                            "name": "Dominant",
+                            "size": 200
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "Homosexual",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "Homosexual",
+                    "children": [
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bicurious",
+                    "children": [
+                        {
+                            "name": "Dominant",
+                            "size": 254
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bicurious",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bicurious",
+                    "children": [
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        },
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bisexual",
+                    "children": [
+                        {
+                            "name": "Dominant",
+                            "size": 493
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bisexual",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                },
+                {
+                    "name": "bisexual",
+                    "children": [
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

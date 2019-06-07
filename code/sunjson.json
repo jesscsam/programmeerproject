@@ -1,0 +1,127 @@
+{
+    "name": "flare",
+    "children": [
+        {
+            "name": "female",
+            "children": [
+                {
+                    "name": "Heterosexual",
+                    "children": [
+                        {
+                            "name": "Dominant",
+                            "size": 634
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 2480
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 529
+                        }
+                    ]
+                },
+                {
+                    "name": "Homosexual",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 60
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 41
+                        }
+                    ]
+                },
+                {
+                    "name": "bicurious",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 661
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 307
+                        }
+                    ]
+                },
+                {
+                    "name": "bisexual",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 779
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 440
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "male",
+            "children": [
+                {
+                    "name": "Heterosexual",
+                    "children": [
+                        {
+                            "name": "Dominant",
+                            "size": 8377
+                        },
+                        {
+                            "name": "Submisive",
+                            "size": 4073
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 4347
+                        }
+                    ]
+                },
+                {
+                    "name": "Homosexual",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 491
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 172
+                        }
+                    ]
+                },
+                {
+                    "name": "bicurious",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 862
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 807
+                        }
+                    ]
+                },
+                {
+                    "name": "bisexual",
+                    "children": [
+                        {
+                            "name": "Submisive",
+                            "size": 1472
+                        },
+                        {
+                            "name": "Switch",
+                            "size": 833
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

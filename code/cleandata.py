@@ -57,13 +57,64 @@ def data_for_sunburst(data):
     Creates dataframe to be used to write JSON for sunburst diagram
     """
 
-    # create dataframe
-    sunburst_df = pd.DataFrame({'count' : data.groupby(['Gender', 'Sexual_orientation', 'Sexual_polarity']).size()}).reset_index()
+    #print(data.pivot(index='Gender',columns=['Sexual_orientation', 'Sexual_polarity']))
 
-    # drop rows with nan values
+    grouped_df = data.groupby(['Gender', 'Sexual_orientation', 'Sexual_polarity'])
+
+    sunburst_df = pd.DataFrame(grouped_df.size().reset_index(name = "Group_Count"))
     sunburst_df = sunburst_df.drop(sunburst_df.index[24:])
 
-    return sunburst_df
+    filename = 'sunjson'
+    to_sunburst_json(sunburst_df, filename)
+
+
+
+def to_sunburst_json(df, filename):
+    """
+    Convert dataframe into nested JSON as in flare files used for D3.js
+    """
+    flare = dict()
+    d = {"name":"flare", "children": []}
+
+    for index, row in df.iterrows():
+        parent = row[0]
+        child = row[1]
+        child2 = row[2]
+        size = row[3]
+
+
+        # Make a list of keys
+        key_list = []
+
+        for item in d['children']:
+            key_list.append(item['name'])
+
+        #if 'parent' is NOT a key in flare.JSON, append it
+        if not parent in key_list:
+            d['children'].append({"name": parent, "children":[{"name": child, "children": [{"name": child2, "size": size}]}]})
+
+        else:
+            check = False
+            for item in d['children']:
+
+                for item2 in item['children']:
+                    if item2['name'] == child and item['name'] == parent:
+                        item2['children'].append({"name": child2, "size": size})
+                        check = True
+
+                if item['name'] == parent:
+                    if check == False:
+                        item['children'].append({"name": child, "children":[]})
+
+
+
+        print(d)
+
+    flare = d
+
+    # export the final result to a json file
+    with open(filename +'.json', 'w') as outfile:
+        json.dump(flare, outfile, indent=4)
 
 
 
@@ -72,12 +123,9 @@ def data_for_piechart(data):
     Creates dataframe to be used to write JSON for pie chart
     """
 
-    print(data.groupby('Age_group').size())
 
     # create dataframe
     piechart_df = pd.DataFrame({'count' : data.groupby(['Gender', 'Sexual_orientation', 'Sexual_polarity','Age_group', 'Risk']).size()}).reset_index()
-
-
 
     # drop rows with nan values
     piechart_df = piechart_df.drop(piechart_df.index[452:])
@@ -178,7 +226,7 @@ def write_JSON(data, filename):
     Writes a DataFrame to JSON
     """
 
-    out = data.to_json(orient='index')
+    out = data.to_json(orient='records')
 
     with open(f'{filename}.txt', 'w') as f:
         f.write(out)
@@ -197,7 +245,7 @@ if __name__ == "__main__":
     #write_JSON(sundata,'sunjson')
 
     piedata = data_for_piechart(data)
-    write_JSON(piedata,'piejson')
+    #write_JSON(piedata,'piejson')
 
     bardata = data_for_barchart(data)
     #write_JSON(bardata,'barjson')
