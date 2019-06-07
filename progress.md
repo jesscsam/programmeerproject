@@ -18,5 +18,16 @@ De ideeën die ik overwogen heb volgt hieronder. Voor alle onderwerpen heb ik da
 - Global Drug Survey: ik heb aan de telefoon gehangen met de head researcher van dat project omdat de data niet publiek is, maar hij had te veel eisen. 
 
 ### 05-06-2019
-Ik ben eindelijk tot een onderwerp gekomen. 
+Ik ben eindelijk tot een onderwerp gekomen! Toch nog een geschikte dataset gevonden m.b.t. sekswerk. 
+Besloten om een sunburst, pie chart en bar chart te gaan maken. 
+Vandaag mijn proposal en design document gefinaliseerd. 
+
+### 06-06-2019 
+Python geschreven om de data te cleanen en om te zetten naar JSON voor de visualisaties. Ging verrassend goed!
+Wel helaas veel werk voor niets gedaan, omdat ik er laat achter kwam dat de json voor iedere visualisatie een specifieke format moet hebben - zeker de JSON voor de sunburst moet op een manier die ik nog niet helemaal snap. 
+Verder vandaag ook de bare bones voor de HTML pagina opgezet, met een Bootstrap template. 
+
+### 07-06-2019
+
+
 
