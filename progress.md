@@ -28,6 +28,7 @@ Wel helaas veel werk voor niets gedaan, omdat ik er laat achter kwam dat de json
 Verder vandaag ook de bare bones voor de HTML pagina opgezet, met een Bootstrap template. 
 
 ### 07-06-2019
-
+Na uren werk is het gelukt om de JSON voor de sunburst te genereren! Eindelijk. 
+Kan nu een basis sunburst van mijn data plotten op mijn website. 
 
 
