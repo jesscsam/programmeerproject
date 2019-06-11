@@ -123,14 +123,50 @@ def data_for_piechart(data):
     Creates dataframe to be used to write JSON for pie chart
     """
 
+    piedict = {}
 
-    # create dataframe
-    piechart_df = pd.DataFrame({'count' : data.groupby(['Gender', 'Sexual_orientation', 'Sexual_polarity','Age_group', 'Risk']).size()}).reset_index()
+    piechart_df = pd.DataFrame({'aantal' : data.groupby(['Age_group', 'Risk']).size()}).reset_index()
 
-    # drop rows with nan values
-    piechart_df = piechart_df.drop(piechart_df.index[452:])
+    alllow = 0
+    allhigh = 0
+    allno = 0
+    allunk = 0
 
-    return piechart_df
+    # calculate the mean of the age groups, for 'All' category
+    for index, row in piechart_df.iterrows():
+        age_group = row.Age_group
+        risklevel = row.Risk
+        aantal = row.aantal
+
+        if not age_group in piedict:
+            piedict[row.Age_group] = []
+            piedict[row.Age_group].append({'Risk': row.Risk, 'size': aantal})
+
+        else:
+            piedict[row.Age_group].append({'Risk': row.Risk, 'size': aantal})
+
+        if risklevel == 'Low_risk':
+            alllow += aantal
+        elif risklevel == 'High_risk':
+            allhigh += aantal
+        elif risklevel == 'No_risk':
+            allno += aantal
+        else:
+            allunk += aantal
+
+    all_lowrisk = alllow / 5;
+    all_highrisk = allhigh / 5;
+    all_norisk = allno / 5;
+    all_unknownrisk = allunk / 5;
+
+    piedict['All'] = []
+    piedict['All'].append({'Risk': 'High_risk', 'size': all_highrisk})
+    piedict['All'].append({'Risk': 'Low_risk', 'size': all_lowrisk})
+    piedict['All'].append({'Risk': 'No_risk', 'size': all_norisk})
+    piedict['All'].append({'Risk': 'unknown_risk', 'size': all_unknownrisk})
+
+    with open('piejson.json', 'w') as outfile:
+        json.dump(piedict, outfile)
 
 
 
@@ -142,9 +178,23 @@ def data_for_barchart(data):
     data = data.drop(['Gender', 'Sexual_orientation', 'Sexual_polarity', 'User_ID', 'Risk', 'Age'], axis=1)
 
     # group data needed for bar chart
-    barchart_df = data.groupby('Age_group').mean().reset_index()
+    #barchart_df = data.groupby('Age_group').mean()
 
-    return barchart_df
+    grouped_df = data.groupby(['Age_group'])
+
+    barchart_df = pd.DataFrame(grouped_df.mean().reset_index())
+
+    bardict = {'Comments': [], 'Chattime': [], 'Ads': [], 'Meets': [], 'Pics': []}
+
+    for index, row in barchart_df.iterrows():
+        bardict['Comments'].append({'Group': row.Age_group, 'mean': row.Num_com})
+        bardict['Chattime'].append({'Group': row.Age_group, 'mean': row.Chat_time})
+        bardict['Ads'].append({'Group': row.Age_group, 'mean': row.Num_adv})
+        bardict['Meets'].append({'Group': row.Age_group, 'mean': row.Num_meet})
+        bardict['Pics'].append({'Group': row.Age_group, 'mean': row.Profile_pictures})
+
+    with open('barjson.json', 'w') as outfile:
+        json.dump(bardict, outfile)
 
 
 
@@ -221,17 +271,6 @@ def get_n_minutes(row):
 
 
 
-def write_JSON(data, filename):
-    """
-    Writes a DataFrame to JSON
-    """
-
-    out = data.to_json(orient='records')
-
-    with open(f'{filename}.txt', 'w') as f:
-        f.write(out)
-
-
 if __name__ == "__main__":
 
     # Load data into dataframe
@@ -241,11 +280,8 @@ if __name__ == "__main__":
     data = clean_data(all_data)
 
     # Create sunburst data & write sunburst json
-    sundata = data_for_sunburst(data)
-    #write_JSON(sundata,'sunjson')
+    #sundata = data_for_sunburst(data)
 
-    piedata = data_for_piechart(data)
-    #write_JSON(piedata,'piejson')
+    #piedata = data_for_piechart(data)
 
     bardata = data_for_barchart(data)
-    #write_JSON(bardata,'barjson')
