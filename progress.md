@@ -33,5 +33,12 @@ Kan nu een basis sunburst van mijn data plotten op mijn website.
 
 ### 11-06-2019
 In het weekend was mijn laptop gesneuveld en heb ik een nieuwe moeten kopen, dus het kostte weer even wat tijd om alles werkende te krijgen.
-Vandaag heb ik ervoor gezorgd dat de sunburst de juiste kleuren weergeeft en een 'mouseover'-functie heeft. Ik heb de JSON voor de pie chart op de juiste manier gestructureerd en ervoor gezorgd dat nu voor één leeftijdscategorie de pie chart zichtbaar is. Er moet dus nog een knop komen om de variabele te togglen. 
+Vandaag heb ik ervoor gezorgd dat de sunburst de juiste kleuren weergeeft en een 'mouseover'-functie heeft. Ik heb de JSON voor de pie chart op de juiste manier gestructureerd en ervoor gezorgd dat nu voor één leeftijdscategorie de pie chart zichtbaar is. Er moet dus nog een knop komen om de variabele te togglen.
 Ik heb de JSON voor de bar chart op de juiste manier gestructureerd en ervoor gezorgd dat nu voor één variabele de bar chart zichtbaar is. Er moet dus nog een knop komen om de variabele te togglen.
+
+### 12-06-2019
+Ik heb een html dropdown menu toegevoegd en een update-functie geschreven voor de pie chart, zodat hij verandert wanneer er en age group geselecteerd wordt in het dropdown menu.
+Wel ben ik er achter gekomen dat ik gisteren iets groots over het hoofd had gezien bij het structureren van de data voor de pie chart. Hij moet namelijk óók te togglen zijn vanuit de sunburst. Het moet dus gestructureerd zijn per age group, maar daarvoor al per 'user characteristics' (geslacht, seksualiteit, sexual polarity). Dat zal ik dus opnieuw moeten gaan doen... Dit heb ik ook over het hoofd gezien bij de data voor de bar chart. Deze moet namelijk ook per geslacht gegroepeerd zijn, omdat je in de sunburst op 'male' en 'female' moet kunnen klikken en dan de activiteit kan zien.
+
+### 13-06-2019
+Zowel gisteren als vandaag gewerkt aan het herstructureren van de JSON voor de bar- en pie chart.

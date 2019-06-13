@@ -4,8 +4,8 @@ function drawSunburst(){
   d3.json("code/sunjson.json").then(function(dataset){
 
     // dimenstions of the sunburst
-    var width = 500;
-    var height = 500;
+    var width = 410;
+    var height = 410;
     var radius = Math.min(width, height) / 2;
 
     // Breadcrumb dimensions: width, height, spacing, width of tip/tail.

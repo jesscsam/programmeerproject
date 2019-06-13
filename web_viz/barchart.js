@@ -16,9 +16,13 @@ function drawBarChart(country) {
 
     d3.json("code/barjson.json").then(function(dataset){
 
-      var data = dataset['Ads']
 
-      console.log(data)
+      var sel = document.getElementById('interactions').value;
+
+      var group = 'male'
+
+      var data = dataset[group][sel]
+
 
       var yScale = d3.scaleLinear()
                  .domain([0, d3.max(data, function(d) { return d['mean']; })])

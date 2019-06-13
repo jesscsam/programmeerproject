@@ -41,13 +41,14 @@ def clean_data(all_data):
     data = data.rename({'Number_of_offline_meetings_attended': 'Num_meet'}, axis=1)
     data = data.rename({'Time_spent_chating_H:M': 'Chat_time'}, axis=1)
 
+    # add age categories
+    data = add_age_groups(data)
+
     # fake the risk data
     data = create_fake_risk(data)
     data = data.drop('Risk', axis=1)
     data = data.rename({'Risk2':'Risk'},axis=1)
 
-    # add age categories
-    data = add_age_groups(data)
 
     return data
 
@@ -123,51 +124,62 @@ def data_for_piechart(data):
     Creates dataframe to be used to write JSON for pie chart
     """
 
+    # Group the necessary data
+    grouped_df = data.groupby(['Gender', 'Sexual_orientation', 'Sexual_polarity', 'Age_group', 'Risk'])
+    piechart_df = pd.DataFrame(grouped_df.size().reset_index(name = "Group_Count"))
+    piechart_df = piechart_df.drop(piechart_df.index[456:])
+
     piedict = {}
 
-    piechart_df = pd.DataFrame({'aantal' : data.groupby(['Age_group', 'Risk']).size()}).reset_index()
-
-    alllow = 0
-    allhigh = 0
-    allno = 0
-    allunk = 0
-
-    # calculate the mean of the age groups, for 'All' category
+    # for each entry in the grouped dataframe, add it to a dictionary
     for index, row in piechart_df.iterrows():
-        age_group = row.Age_group
-        risklevel = row.Risk
-        aantal = row.aantal
+        gender = row[0]
+        sex_or = row[1]
+        sex_pol = row[2]
+        age_group = row[3]
+        risk = row[4]
+        count = row[5]
 
-        if not age_group in piedict:
-            piedict[row.Age_group] = []
-            piedict[row.Age_group].append({'Risk': row.Risk, 'size': aantal})
+        if gender not in piedict:
+            piedict[gender] = {}
+        if sex_or not in piedict[gender]:
+            piedict[gender][sex_or] = {}
+        if sex_pol not in piedict[gender][sex_or]:
+            piedict[gender][sex_or][sex_pol] = {}
+        if age_group not in piedict[gender][sex_or][sex_pol]:
+            piedict[gender][sex_or][sex_pol][age_group] = []
+        if risk not in piedict[gender][sex_or][sex_pol][age_group]:
+            piedict[gender][sex_or][sex_pol][age_group].append({'Risk': risk, 'Count': count})
 
-        else:
-            piedict[row.Age_group].append({'Risk': row.Risk, 'size': aantal})
 
-        if risklevel == 'Low_risk':
-            alllow += aantal
-        elif risklevel == 'High_risk':
-            allhigh += aantal
-        elif risklevel == 'No_risk':
-            allno += aantal
-        else:
-            allunk += aantal
 
-    all_lowrisk = alllow / 5;
-    all_highrisk = allhigh / 5;
-    all_norisk = allno / 5;
-    all_unknownrisk = allunk / 5;
+    # Group risks without taking into account age groups
+    grouped_for_all = pd.DataFrame(data.groupby(['Gender', 'Sexual_orientation', 'Sexual_polarity', 'Risk']).size().reset_index(name = "Group_Count"))
+    alldict = {}
 
-    piedict['All'] = []
-    piedict['All'].append({'Risk': 'High_risk', 'size': all_highrisk})
-    piedict['All'].append({'Risk': 'Low_risk', 'size': all_lowrisk})
-    piedict['All'].append({'Risk': 'No_risk', 'size': all_norisk})
-    piedict['All'].append({'Risk': 'unknown_risk', 'size': all_unknownrisk})
+    # For each entry, add it to a dictionary for all age groups
+    for index, row in grouped_for_all.iterrows():
+        gender = row[0]
+        sex_or = row[1]
+        sex_pol = row[2]
+        risk = row[3]
+        count = row[4]
+
+        if gender not in alldict:
+            alldict[gender] = {}
+        if sex_or not in alldict[gender]:
+            alldict[gender][sex_or] = {}
+        if sex_pol not in alldict[gender][sex_or]:
+            alldict[gender][sex_or][sex_pol] = []
+        if risk not in alldict[gender][sex_or][sex_pol]:
+            alldict[gender][sex_or][sex_pol].append({'Risk': risk, 'Count': count})
+
+    # Add data for combined age groups to main dictionary
+    piedict['All'] = alldict
+
 
     with open('piejson.json', 'w') as outfile:
         json.dump(piedict, outfile)
-
 
 
 def data_for_barchart(data):
@@ -175,23 +187,48 @@ def data_for_barchart(data):
     Creates dataframe to be used to write JSON for bar chart
     """
     # drop irrelevant columns
-    data = data.drop(['Gender', 'Sexual_orientation', 'Sexual_polarity', 'User_ID', 'Risk', 'Age'], axis=1)
+    data = data.drop(['Sexual_orientation', 'Sexual_polarity', 'User_ID', 'Risk', 'Age'], axis=1)
 
     # group data needed for bar chart
     #barchart_df = data.groupby('Age_group').mean()
 
-    grouped_df = data.groupby(['Age_group'])
+    grouped_df = data.groupby(['Age_group', 'Gender'])
 
     barchart_df = pd.DataFrame(grouped_df.mean().reset_index())
 
-    bardict = {'Comments': [], 'Chattime': [], 'Ads': [], 'Meets': [], 'Pics': []}
+    print(barchart_df)
+
+    bardict = {}
+
+    male = {'Comments': [], 'Chattime': [], 'Ads': [], 'Meets': [], 'Pics': []}
+    female = {'Comments': [], 'Chattime': [], 'Ads': [], 'Meets': [], 'Pics': []}
+    all = {'Comments': [], 'Chattime': [], 'Ads': [], 'Meets': [], 'Pics': []}
 
     for index, row in barchart_df.iterrows():
-        bardict['Comments'].append({'Group': row.Age_group, 'mean': row.Num_com})
-        bardict['Chattime'].append({'Group': row.Age_group, 'mean': row.Chat_time})
-        bardict['Ads'].append({'Group': row.Age_group, 'mean': row.Num_adv})
-        bardict['Meets'].append({'Group': row.Age_group, 'mean': row.Num_meet})
-        bardict['Pics'].append({'Group': row.Age_group, 'mean': row.Profile_pictures})
+        if row.Gender == 'male':
+            male['Comments'].append({'Group': row.Age_group, 'mean': row.Num_com})
+            male['Chattime'].append({'Group': row.Age_group, 'mean': row.Chat_time})
+            male['Ads'].append({'Group': row.Age_group, 'mean': row.Num_adv})
+            male['Meets'].append({'Group': row.Age_group, 'mean': row.Num_meet})
+            male['Pics'].append({'Group': row.Age_group, 'mean': row.Profile_pictures})
+        elif row.Gender == 'female':
+            female['Comments'].append({'Group': row.Age_group, 'mean': row.Num_com})
+            female['Chattime'].append({'Group': row.Age_group, 'mean': row.Chat_time})
+            female['Ads'].append({'Group': row.Age_group, 'mean': row.Num_adv})
+            female['Meets'].append({'Group': row.Age_group, 'mean': row.Num_meet})
+            female['Pics'].append({'Group': row.Age_group, 'mean': row.Profile_pictures})
+
+    grouped_for_all = pd.DataFrame(data.groupby('Age_group').mean().reset_index())
+    for index, row in grouped_for_all.iterrows():
+        all['Comments'].append({'Group': row.Age_group, 'mean': row.Num_com})
+        all['Chattime'].append({'Group': row.Age_group, 'mean': row.Chat_time})
+        all['Ads'].append({'Group': row.Age_group, 'mean': row.Num_adv})
+        all['Meets'].append({'Group': row.Age_group, 'mean': row.Num_meet})
+        all['Pics'].append({'Group': row.Age_group, 'mean': row.Profile_pictures})
+
+    bardict['male'] = male
+    bardict['female'] = female
+    bardict['all'] = all
 
     with open('barjson.json', 'w') as outfile:
         json.dump(bardict, outfile)
@@ -233,6 +270,7 @@ def create_fake_risk(data):
 
     risks = []
 
+
     # for a specific amount of times, add the different risk values
     for i in range(int(len(data) / 7 * 0.5)):
         risks.append('High_risk')
@@ -243,8 +281,9 @@ def create_fake_risk(data):
     for i in range(int(len(data) / 7 * 3.5)):
         risks.append('No_risk')
 
-    for i in range(int(len(data) / 7)):
+    for i in range(int(len(data) / 7 * 1)):
         risks.append('unknown_risk')
+
 
     # add two more to get to the exact len(data)
     risks.append('No_risk')
