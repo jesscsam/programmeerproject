@@ -1,28 +1,34 @@
 
 
-function drawBarChart(country) {
-    //Width, height and scale
-    var w = 500;
-    var h = 250;
-    var padding = 40;
-    var kleinpadding = 20;
+//Width, height and scale
+var w = 500;
+var h = 250;
+var padding = 40;
+var kleinpadding = 20;
 
-    // initialize SVG
-    var svg = d3.select("#bardiv")
-                .append("svg")
-                  .attr("width", w)
-                  .attr("height", h)
-                  .attr("class", "barChart")
+// initialize SVG
+var svg = d3.select("#bardiv")
+            .append("svg")
+              .attr("width", w)
+              .attr("height", h)
+              .attr("class", "barChart")
 
-    d3.json("code/barjson.json").then(function(dataset){
+d3.json("code/barjson.json").then(function(dataset){
 
+  updateBarChart('all')
 
-      var sel = document.getElementById('interactions').value;
+  sel = document.getElementById('interactions');
+  sel.addEventListener("change", function(d) {
+    svg.selectAll('rect').remove()
+    svg.selectAll('g').remove()
+    updateBarChart('all')
+  });
 
-      var group = 'male'
+  function updateBarChart(group){
 
-      var data = dataset[group][sel]
+      var sel = document.getElementById('interactions');
 
+      var data = dataset[group][sel.value]
 
       var yScale = d3.scaleLinear()
                  .domain([0, d3.max(data, function(d) { return d['mean']; })])
@@ -69,9 +75,10 @@ function drawBarChart(country) {
            .attr("transform", "translate("+ 200 +", "+ 60 +")")
            .call(y_axis);
 
+     };
 
+});
 
-    });
-  };
-
-drawBarChart();
+function set_group(){
+  
+}

@@ -56,13 +56,15 @@ function drawSunburst(){
         .attr("display", function (d) { return d.depth ? null : "none"; })  // <-- 5
         .attr("d", arc)  // <-- 6
         .style('stroke', '#fff')  // <-- 7
-        //.style("fill", '#ababab');  // <-- 8
         .style("fill", function(d) { return colors[d.data.name]; })
         .style("opacity", 1)
         .on("mouseover", mouseover);
 
-    // Add the mouseleave handler to the bounding circle.
+  // Add the mouseleave handler to the bounding circle.
   d3.select("#container").on("mouseleave", mouseleave);
+
+  initializeBreadcrumbTrail();
+  drawLegend();
 
   // Get total size of the tree = value of root node from partition.
   totalSize = path.datum().value;
@@ -192,15 +194,46 @@ function drawSunburst(){
 
     }
 
+    function drawLegend() {
+
+      // Dimensions of legend item: width, height, spacing, radius of rounded rect.
+      var li = {
+        w: 95, h: 30, s: 3, r: 3
+      };
+
+      var legend = d3.select("#sunb").append("svg:svg")
+          .attr("width", li.w)
+          .attr("height", d3.keys(colors).length * (li.h + li.s))
+          .attr("transform", function(d) {
+                  return "translate(-100,-350";
+               });
+
+      var g = legend.selectAll("g")
+          .data(d3.entries(colors))
+          .enter().append("svg:g")
+          .attr("transform", function(d, i) {
+                  return "translate(0," + i * (li.h + li.s) + ")";
+               });
+
+      g.append("svg:rect")
+          .attr("rx", li.r)
+          .attr("ry", li.r)
+          .attr("width", li.w)
+          .attr("height", li.h)
+          .style("fill", function(d) { return d.value; });
+
+      g.append("svg:text")
+          .attr("x", li.w / 2)
+          .attr("y", li.h / 2)
+          .attr("dy", "0.35em")
+          .attr("text-anchor", "middle")
+          .text(function(d) { return d.key; });
+    }
+
+
 
   })
 }
 
-
-
-function drawBarChart(){
-
-
-}
 
 drawSunburst();

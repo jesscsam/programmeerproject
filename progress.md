@@ -42,3 +42,9 @@ Wel ben ik er achter gekomen dat ik gisteren iets groots over het hoofd had gezi
 
 ### 13-06-2019
 Zowel gisteren als vandaag gewerkt aan het herstructureren van de JSON voor de bar- en pie chart.
+
+### 14-06-2019
+Vandaag helaas ziek en weinig kunnen doen. Wel naar het tutorgesprek gegaan.
+
+### 17-06-2019
+Eindelijk de JSON voor beide charts goed gekregen, en veel aan beide charts getweaked - maar zonder resultaat. Ik stelde om 13:30 een vraag en ik ben nooit aan de beurt gekomen (assistentie was van 13:00-17:00).
