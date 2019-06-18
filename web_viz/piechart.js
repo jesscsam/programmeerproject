@@ -9,7 +9,7 @@ var margin = 40
 var radius = Math.min(width, height) / 2 - margin
 
 // append the svg object to the div called 'my_dataviz'
-var svg = d3.select("#pie")
+var svgPie = d3.select("#pie")
           .append("svg")
             .attr("width", width)
             .attr("height", height)
@@ -25,7 +25,7 @@ var colors = {
 
 // Compute the position of each group on the pie:
 var pie = d3.pie()
-      .value(function(d) { return d.count; })
+      .value(function(d) { return d.Count; })
       .sort(function(a, b) { return d3.ascending(a.key, b.key);} ) // This make sure that group order remains the same in the pie chart
 
 const arc = d3.arc()
@@ -40,36 +40,47 @@ function arcTween(a) {
 
 d3.json("code/piejson.json").then(dataset => {
 
-  var sel = document.getElementById('ages');
-  var category = 'All'
+  var agegr = document.getElementById('ages');
 
-  updatePie(category, sel.value);
+  var category = d3.select("#sunb").selectAll("path")
+                  .on("click", function(d) { updatePie(agegr.value, d);
+                  });
 
-  sel.addEventListener("change", function(d) {
-    updatePie(category, this.value)
+
+  updatePie(agegr.value, null);
+
+  agegr.addEventListener("change", function(d) {
+    updatePie(this.value, null)
   });
 
-  function updatePie(category, agegroup) {
+  function updatePie(agegroup, userchar) {
 
-      //console.log(dataset);
-
-      var data_ready = pie(dataset['ReallyAll'])
+      if (agegroup == 'All' && userchar == null) {
+        var data_ready = pie(dataset['ReallyAll'])
+      }
+      else if (agegroup != 'All' && userchar == null) {
+        var data_ready = pie(dataset['All'][agegroup])
+      }
+      else if (agegroup != 'All') {
+        var data_ready = pie(dataset[userchar.parent.parent.data.name][userchar.parent.data.name][userchar.data.name][agegroup])
+      }
 
       // Join new data
-      const path = svg.selectAll("pie")
+      const path = svgPie.selectAll("path")
                       .data(data_ready);
 
-      // Update existing arcs
+      //Update existing arcs
       path.transition().duration(200).attrTween("d", arcTween);
 
       // Enter new arcs
       path.enter().append("path")
-          .attr('fill', function(d){ console.log(d.data.Risk); return colors[d.data.Risk]})
+          // .merge(path)
+          .attr('fill', function(d){ return colors[d.data.Risk]})
           .attr("d", arc)
           .attr("stroke", "white")
           .attr("stroke-width", "6px")
-          .each(function(d) { this._current = d; });
+          .each(function(d) { this._current = d.data.Count; });
 
-       path.exit().remove()
+       // path.exit().remove()
       }
 });

@@ -49,6 +49,12 @@ function drawSunburst(){
         .innerRadius(function (d) { return d.y0 })
         .outerRadius(function (d) { return d.y1 });
 
+    // Bounding circle underneath the sunburst, to make it easier to detect
+    // when the mouse leaves the parent g.
+        svg.append("svg:circle")
+          .attr("r", radius)
+          .style("opacity", 0);
+
     var path = svg.selectAll('path')  // <-- 1
         .data(root.descendants())  // <-- 2
         .enter()  // <-- 3
@@ -70,7 +76,7 @@ function drawSunburst(){
   totalSize = path.datum().value;
 
 
-        // Fade all but the current sequence, and show it in the breadcrumb trail.
+    // Fade all but the current sequence, and show it in the breadcrumb trail.
     function mouseover(d) {
 
       var percentage = (100 * d.value / totalSize).toPrecision(3);
@@ -205,7 +211,7 @@ function drawSunburst(){
           .attr("width", li.w)
           .attr("height", d3.keys(colors).length * (li.h + li.s))
           .attr("transform", function(d) {
-                  return "translate(-100,-350";
+                  return "translate(-100,-350)";
                });
 
       var g = legend.selectAll("g")
