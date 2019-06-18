@@ -146,10 +146,27 @@ def data_for_piechart(data):
             piedict[gender][sex_or] = {}
         if sex_pol not in piedict[gender][sex_or]:
             piedict[gender][sex_or][sex_pol] = {}
+            piedict[gender][sex_or][sex_pol]['All'] = []
         if age_group not in piedict[gender][sex_or][sex_pol]:
             piedict[gender][sex_or][sex_pol][age_group] = []
         if risk not in piedict[gender][sex_or][sex_pol][age_group]:
             piedict[gender][sex_or][sex_pol][age_group].append({'Risk': risk, 'Count': count})
+
+    # Get 'all' option for user characteristics categories
+    allage_chars_df = pd.DataFrame(data.groupby(['Gender', 'Sexual_orientation', 'Sexual_polarity', 'Risk']).size().reset_index(name = "Count"))
+
+    print(piedict)
+
+    for index, row in allage_chars_df.iterrows():
+        gender = row[0]
+        sex_or = row[1]
+        sex_pol = row[2]
+        risk = row[3]
+        count = row[4]
+
+        print(gender, sex_or, sex_pol, risk, count)
+
+        piedict[gender][sex_or][sex_pol]['All'].append({'Risk': risk, 'Count': count})
 
     # Group risks without taking into account age groups
     grouped_for_all = pd.DataFrame(data.groupby(['Age_group', 'Risk']).size().reset_index(name = "Count"))

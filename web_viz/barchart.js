@@ -1,84 +1,104 @@
 
+function drawBarChart() {
 
-//Width, height and scale
-var w = 500;
-var h = 250;
-var padding = 40;
-var kleinpadding = 20;
+    // Define width, height and scale
+    var w = 500;
+    var h = 250;
+    var padding = 40;
+    var kleinpadding = 20;
 
-// initialize SVG
-var svg = d3.select("#bardiv")
-            .append("svg")
-              .attr("width", w)
-              .attr("height", h)
-              .attr("class", "barChart")
+    // Initialize SVG within div called 'bardiv'
+    var svg = d3.select("#bardiv")
+                .append("svg")
+                  .attr("width", w)
+                  .attr("height", h)
+                  .attr("class", "barChart")
 
-d3.json("code/barjson.json").then(function(dataset){
+    // Load data
+    d3.json("code/barjson.json").then(function(dataset){
 
-  updateBarChart('all')
+      console.log(dataset)
 
-  sel = document.getElementById('interactions');
-  sel.addEventListener("change", function(d) {
-    svg.selectAll('rect').remove()
-    svg.selectAll('g').remove()
-    updateBarChart('all')
-  });
-
-  function updateBarChart(group){
-
+      // Get selected value from HTML element
       var sel = document.getElementById('interactions');
 
-      var data = dataset[group][sel.value]
+      // Draw the first bar chart
+      updateBarChart(null, sel.value)
 
-      var yScale = d3.scaleLinear()
-                 .domain([0, d3.max(data, function(d) { return d['mean']; })])
-                 .range([h - 100, 0]);
+      // If the user clicks a path within the sunburst, update the bar chart
+      var gender = d3.select("#sunb").selectAll("path")
+                      .on("click", function(d) { updateBarChart(d.data.name, sel.value);
+                      });
 
-       var y_axis = d3.axisLeft()
-                     .scale(yScale);
+      // If user selects a different subject, update the bar chart
+      sel.addEventListener("change", function(d) {
+        svg.selectAll('rect').remove()
+        svg.selectAll('g').remove()
+        updateBarChart(null, this.value)
+      });
 
 
-       var xScale = d3.scaleBand()
-                 .domain(['18-25','25-30', '30-40', '40-50', '50+'])
-                 .range([200, w])
-                 .paddingInner(0.05)
-                 .paddingOuter(0.05)
 
-       var x_axis = d3.axisBottom()
-                      .scale(xScale);
+      function updateBarChart(gender, sel){
 
-      svg.selectAll("rect")
-               .data(data)
-               .enter()
-               .append("rect")
-               .attr("class", "bar")
-               .attr("fill", "#f9dd6b")
-               .attr("width", function(d) {
-                   return xScale.bandwidth()
-                 })
-               .attr("y", function(d) {
-                   return yScale(d['mean']) + 50
-                 })
-               .attr("x", function(d) {
-                   return xScale(d['Group']);
-               })
-               .attr("height", function(d) {
-                 return (h - padding) - yScale(d['mean']) - 50;
-               })
+        if (gender == null) {
+          var data = dataset['all'][sel]
+        }
+        else {
+          var data = dataset[gender][sel]
+        }
 
-       // draw both axes
-        svg.append("g")
-           .attr("transform", "translate(0, "+ 210 +")")
-           .call(x_axis);
+          var yScale = d3.scaleLinear()
+                     .domain([0, d3.max(data, function(d) { return d['mean']; })])
+                     .range([h - 100, 0]);
 
-        svg.append("g")
-           .attr("transform", "translate("+ 200 +", "+ 60 +")")
-           .call(y_axis);
+           var y_axis = d3.axisLeft()
+                         .scale(yScale);
 
-     };
 
-});
+           var xScale = d3.scaleBand()
+                     .domain(['18-25','25-30', '30-40', '40-50', '50+'])
+                     .range([200, w])
+                     .paddingInner(0.05)
+                     .paddingOuter(0.05)
 
-function set_group(){
-  
-}
+           var x_axis = d3.axisBottom()
+                          .scale(xScale);
+
+
+          const rects = svg.selectAll("rect")
+                   .data(data)
+
+          rects.transition().duration(500)
+
+          rects.enter().append("rect")
+                   .attr("class", "bar")
+                   .attr("fill", "#f9dd6b")
+                   .attr("width", function(d) {
+                       return xScale.bandwidth()
+                     })
+                   .attr("y", function(d) {
+                       return yScale(d['mean']) + 50
+                     })
+                   .attr("x", function(d) {
+                       return xScale(d['Group']);
+                   })
+                   .attr("height", function(d) {
+                     return (h - padding) - yScale(d['mean']) - 50;
+                   })
+
+           // draw both axes
+            svg.append("g")
+               .attr("transform", "translate(0, "+ 210 +")")
+               .call(x_axis);
+
+            svg.append("g")
+               .attr("transform", "translate("+ 200 +", "+ 60 +")")
+               .call(y_axis);
+
+         }
+
+    });
+};
+
+drawBarChart();
