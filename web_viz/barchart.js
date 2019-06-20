@@ -17,36 +17,41 @@ function drawBarChart() {
     // Load data
     d3.json("code/barjson.json").then(function(dataset){
 
-      console.log(dataset)
-
       // Get selected value from HTML element
       var sel = document.getElementById('interactions');
+
+      var agegr = document.getElementById('ages');
 
       // Draw the first bar chart
       updateBarChart(null, sel.value)
 
       // If the user clicks a path within the sunburst, update the bar chart
       var gender = d3.select("#sunb").selectAll("path")
-                      .on("click", function(d) { updateBarChart(d.data.name, sel.value);
+                      .on("click", function(d) {
+                        if (d.data.name == "female" || d.data.name == "male"){
+                          updateBarChart(d.data.name, sel.value);
+                        }
+                        // if (d.data.name == "Dominant" || d.data.name == "Submisive" || d.data.name == "Switch") {
+                        //   drawPieChart();
+                        //   drawPieChart().then().updatePie(agegr.value, d.data.name);
+                      //}
                       });
 
       // If user selects a different subject, update the bar chart
       sel.addEventListener("change", function(d) {
-        svg.selectAll('rect').remove()
-        svg.selectAll('g').remove()
         updateBarChart(null, this.value)
       });
 
 
-
       function updateBarChart(gender, sel){
+
 
         if (gender == null) {
           var data = dataset['all'][sel]
         }
         else {
           var data = dataset[gender][sel]
-        }
+        };
 
           var yScale = d3.scaleLinear()
                      .domain([0, d3.max(data, function(d) { return d['mean']; })])
@@ -70,6 +75,12 @@ function drawBarChart() {
                    .data(data)
 
           rects.transition().duration(500)
+                            .attr("y", function(d) {
+                              return yScale(d['mean']) + 50
+                            })
+                            .attr("height", function(d) {
+                              return (h - padding) - yScale(d['mean']) - 50;
+                            })
 
           rects.enter().append("rect")
                    .attr("class", "bar")
@@ -85,16 +96,21 @@ function drawBarChart() {
                    })
                    .attr("height", function(d) {
                      return (h - padding) - yScale(d['mean']) - 50;
-                   })
+                   });
 
-           // draw both axes
-            svg.append("g")
-               .attr("transform", "translate(0, "+ 210 +")")
-               .call(x_axis);
+            // draw both axes
+             svg.append("g")
+                .attr("transform", "translate(0, "+ 210 +")")
+                .call(x_axis);
 
-            svg.append("g")
-               .attr("transform", "translate("+ 200 +", "+ 60 +")")
-               .call(y_axis);
+            svg.select("#yas").remove()
+
+             svg.append("g")
+                .attr("transform", "translate("+ 200 +", "+ 60 +")")
+                .attr("id","yas")
+                .call(y_axis);
+
+
 
          }
 

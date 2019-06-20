@@ -54,6 +54,7 @@ function drawPieChart() {
                       .on("click", function(d) { updatePie(agegr.value, d);
                       });
 
+
       // If the user selects a new agegroup, update the pie chart
       agegr.addEventListener("change", function(d) {
         updatePie(this.value, null)

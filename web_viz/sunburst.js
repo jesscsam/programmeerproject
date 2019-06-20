@@ -211,7 +211,7 @@ function drawSunburst(){
           .attr("width", li.w)
           .attr("height", d3.keys(colors).length * (li.h + li.s))
           .attr("transform", function(d) {
-                  return "translate(-100,-350)";
+                  return "translate(50,-350)";
                });
 
       var g = legend.selectAll("g")
