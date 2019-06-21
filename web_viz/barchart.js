@@ -32,9 +32,8 @@ function drawBarChart() {
                           updateBarChart(d.data.name, sel.value);
                         }
                         if (d.data.name == "Dominant" || d.data.name == "Submisive" || d.data.name == "Switch") {
-                          drawPieChart();
-                          drawPieChart().updatePie(agegr.value, d.data.name);
-                      }
+                            drawPieChart.updatePie(agegr.value, d);
+                          }
                       });
 
       // If user selects a different subject, update the bar chart
@@ -117,5 +116,3 @@ function drawBarChart() {
 };
 
 drawBarChart();
-
-drawPieChart();

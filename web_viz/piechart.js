@@ -1,4 +1,3 @@
-
 function drawPieChart() {
 
     // set the dimensions and margins of the graph
@@ -101,6 +100,6 @@ function drawPieChart() {
           drawPieChart.updatePie = updatePie;
 
         })
-
-
     };
+
+drawPieChart();
