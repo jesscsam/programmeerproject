@@ -1,15 +1,11 @@
 function drawPieChart() {
 
     // set the dimensions and margins of the graph
-    // var parentDiv = document.getElementById("pie");
-    // var width = parentDiv.clientWidth;
-    // var height = parentDiv.clientHeight;
-
     var width = 350
-    var height = 300
+    var height = 350
     var margin = 40
 
-    // The radius of the pieplot is half the width or half the height (smallest one). I substract a bit of margin.
+    // The radius of the pieplot is half the width or half the height (smallest one)
     var radius = Math.min(width, height) / 2 - margin
 
     // Append the svg object to the div called 'pie'
@@ -38,6 +34,8 @@ function drawPieChart() {
         .innerRadius(0)
         .outerRadius(radius);
 
+
+    // Store the displayed angles in _current, interpolate from _current to new angles
     function arcTween(a) {
         const i = d3.interpolate(this._current, a);
         this._current = i(1);
@@ -53,17 +51,10 @@ function drawPieChart() {
       // Draw the initial pie chart
       updatePie(agegr.value, null);
 
-      // If the user clicks a path within the sunburst, update the pie chart
-      // var category = d3.select("#sunb").selectAll("path")
-      //                 .on("click", function(d) { updatePie(agegr.value, d);
-      //                 });
-
-
       // If the user selects a new agegroup, update the pie chart
       agegr.addEventListener("change", function(d) {
         updatePie(this.value, null)
       });
-
 
 
       function updatePie(agegroup, userchar) {
@@ -93,10 +84,11 @@ function drawPieChart() {
               .attr("stroke", "white")
               .attr("stroke-width", "6px")
               .each(function(d) { this._current = d.data.Count; });
-
+          // Remove unnecessary arcs
            path.exit().remove()
           }
 
+          // Declaring function to be used in barchart.js
           drawPieChart.updatePie = updatePie;
 
         })

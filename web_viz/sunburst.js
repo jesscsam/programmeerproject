@@ -1,13 +1,10 @@
 
 function drawSunburst(){
 
+  // Load data
   d3.json("code/sunjson.json").then(function(dataset){
 
-    // dimenstions of the sunburst
-    // var parentDiv = document.getElementById("sunb");
-    // var width = parentDiv.clientWidth;
-    // var height = parentDiv.clientHeight;
-
+    // Dimenstions of the sunburst
     var width = 400;
     var height = 400;
     var radius = Math.min(width, height) / 2;
@@ -17,7 +14,7 @@ function drawSunburst(){
           w: 75, h: 30, s: 3, t: 10
         };
 
-
+    // Define colors to be used for sunburst parts
     var colors = {
         "male": "#8dd3c7",
         "female": "#fccde5",
@@ -26,21 +23,21 @@ function drawSunburst(){
         "bicurious": "#bebada",
         "bisexual": "#d9d9d9",
         "Submisive": "#fdb462",
-        "Dominant": "#8dd3c7",
+        "Dominant": "#80b1d3",
         "Switch": "#fb8072",
       };
 
-
+    // Append SVG element to correct div
     var svg = d3.select("#sunb")
                 .append("svg")
                   .attr("width", width)
                   .attr("height", height)
                   .attr("class", "sunburst")
-                  .append("g")
+                .append("g")
                   .attr("id", "container")
                   .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    var partition = d3.partition()  // <-- 1
+    var partition = d3.partition()
                       .size([2 * Math.PI, radius]);
 
     var root = d3.hierarchy(dataset)
@@ -53,34 +50,35 @@ function drawSunburst(){
         .innerRadius(function (d) { return d.y0 })
         .outerRadius(function (d) { return d.y1 });
 
-    // Bounding circle underneath the sunburst, to make it easier to detect
-    // when the mouse leaves the parent g.
+    // Bounding circle underneath sunburst, to make it easier to detect when mouse leaves the parent g
         svg.append("svg:circle")
           .attr("r", radius)
           .style("opacity", 0);
 
-    var path = svg.selectAll('path')  // <-- 1
-        .data(root.descendants())  // <-- 2
-        .enter()  // <-- 3
-        .append('path')  // <-- 4
-        .attr("display", function (d) { return d.depth ? null : "none"; })  // <-- 5
-        .attr("d", arc)  // <-- 6
-        .style('stroke', '#fff')  // <-- 7
-        .style("fill", function(d) { return colors[d.data.name]; })
-        .style("opacity", 1)
-        .on("mouseover", mouseover);
+    // Draw path for each datapoint
+    var path = svg.selectAll('path')
+        .data(root.descendants())
+        .enter()
+        .append('path')
+          .attr("display", function (d) { return d.depth ? null : "none"; })
+          .attr("d", arc)
+          .style('stroke', '#fff')
+          .style("fill", function(d) { return colors[d.data.name]; })
+          .style("opacity", 1)
+          .on("mouseover", mouseover);
 
-  // Add the mouseleave handler to the bounding circle.
+  // Add the mouseleave handler to the bounding circle
   d3.select("#container").on("mouseleave", mouseleave);
 
+  // Initialize legend and breadcrumb trails
   initializeBreadcrumbTrail();
   drawLegend();
 
-  // Get total size of the tree = value of root node from partition.
+  // Get total size of the tree = value of root node from partition
   totalSize = path.datum().value;
 
 
-    // Fade all but the current sequence, and show it in the breadcrumb trail.
+    // Fade all but the current sequence, and show it in the breadcrumb trail
     function mouseover(d) {
 
       var percentage = (100 * d.value / totalSize).toPrecision(3);
@@ -99,29 +97,29 @@ function drawSunburst(){
       sequenceArray.shift(); // remove root node from the array
       updateBreadcrumbs(sequenceArray, percentageString);
 
-      // Fade all the segments.
+      // Fade all the segments
       d3.select("#sunb").selectAll("path")
           .style("opacity", 0.3);
 
-      // Then highlight only those that are an ancestor of the current segment.
+      // Then highlight only those that are an ancestor of the current segment
       svg.selectAll("path")
           .filter(function(node) {
                     return (sequenceArray.indexOf(node) >= 0);
                   })
           .style("opacity", 1);
-    }
+    };
 
-    // Restore everything to full opacity when moving off the visualization.
+    // Restore everything to full opacity when moving off the visualization
     function mouseleave(d) {
 
       // Hide the breadcrumb trail
       d3.select("#trail")
           .style("visibility", "hidden");
 
-      // Deactivate all segments during transition.
+      // Deactivate all segments during transition
       d3.selectAll("path").on("mouseover", null);
 
-      // Transition each segment to full opacity and then reactivate it.
+      // Transition each segment to full opacity and then reactivate it
       d3.selectAll("path")
           .transition()
           .duration(1000)
@@ -132,22 +130,25 @@ function drawSunburst(){
 
       d3.select("#explanation")
           .style("visibility", "hidden");
-    }
+    };
+
 
     function initializeBreadcrumbTrail() {
-      // Add the svg area.
+
+      // Add the svg area
       var trail = d3.select("#sunb").append("svg:svg")
           .attr("width", width)
           .attr("height", 50)
           .attr("id", "trail");
-          
-      // Add the label at the end, for the percentage.
+
+      // Add the label at the end, for the percentage
       trail.append("svg:text")
         .attr("id", "endlabel")
         .style("fill", "#000");
-    }
+    };
 
-    // Generate a string that describes the points of a breadcrumb polygon.
+
+    // Generate a string that describes the points of a breadcrumb polygon
     function breadcrumbPoints(d, i) {
       var points = [];
       points.push("0,0");
@@ -155,24 +156,25 @@ function drawSunburst(){
       points.push(b.w + b.t + "," + (b.h / 2));
       points.push(b.w + "," + b.h);
       points.push("0," + b.h);
-      if (i > 0) { // Leftmost breadcrumb; don't include 6th vertex.
+      if (i > 0) { // Leftmost breadcrumb; don't include 6th vertex
         points.push(b.t + "," + (b.h / 2));
       }
       return points.join(" ");
-    }
+    };
 
-    // Update the breadcrumb trail to show the current sequence and percentage.
+
+    // Update the breadcrumb trail to show the current sequence and percentage
     function updateBreadcrumbs(nodeArray, percentageString) {
 
-      // Data join; key function combines name and depth (= position in sequence).
+      // Data join; key function combines name and depth (= position in sequence)
       var trail = d3.select("#trail")
           .selectAll("g")
           .data(nodeArray, function(d) { return d.data.name + d.depth; });
 
-      // Remove exiting nodes.
+      // Remove exiting nodes
       trail.exit().remove();
 
-      // Add breadcrumb and label for entering nodes.
+      // Add breadcrumb and label for entering nodes
       var entering = trail.enter().append("svg:g");
 
       entering.append("svg:polygon")
@@ -186,12 +188,12 @@ function drawSunburst(){
           .attr("text-anchor", "middle")
           .text(function(d) { return d.data.name; });
 
-      // Merge enter and update selections; set position for all nodes.
+      // Merge enter and update selections; set position for all nodes
       entering.merge(trail).attr("transform", function(d, i) {
         return "translate(" + i * (b.w + b.s) + ", 0)";
       });
 
-      // Now move and update the percentage at the end.
+      // Now move and update the percentage at the end
       d3.select("#trail").select("#endlabel")
           .attr("x", (nodeArray.length + 0.5) * (b.w + b.s))
           .attr("y", b.h / 2)
@@ -199,25 +201,25 @@ function drawSunburst(){
           .attr("text-anchor", "middle")
           .text(percentageString);
 
-      // Make the breadcrumb trail visible, if it's hidden.
+      // Make the breadcrumb trail visible, if it's hidden
       d3.select("#trail")
           .style("visibility", "");
-
-    }
+    };
 
     function drawLegend() {
 
-      // Dimensions of legend item: width, height, spacing, radius of rounded rect.
+      // Dimensions of legend item: width, height, spacing, radius of rounded rect
       var li = {
         w: 95, h: 30, s: 3, r: 3
       };
 
+      // Select the correct div and append a new SVG
       var legend = d3.select("#legend").append("svg:svg")
           .attr("width", li.w)
           .attr("height", d3.keys(colors).length * (li.h + li.s))
-          .attr("class", "legendid")
-
-
+          .attr("class", "legendid");
+          
+      // Append a legend element for each data entry
       var g = legend.selectAll("g")
           .data(d3.entries(colors))
           .enter().append("svg:g")
@@ -238,12 +240,10 @@ function drawSunburst(){
           .attr("dy", "0.35em")
           .attr("text-anchor", "middle")
           .text(function(d) { return d.key; });
-    }
+    };
 
-
-
-  })
-}
+  });
+};
 
 
 drawSunburst();

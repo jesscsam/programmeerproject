@@ -59,3 +59,7 @@ Update-functie voor de bar chart geschreven, deze werkt nu perfect. Pie chart up
 Lang bezig geweest met het Bootstrap Grid systeem om alle elementen op een goede plek op de pagina te krijgen, maar daar snap ik nog niks van.
 
 ### 20-06-2019
+Alle figuren en elementen op een logische en consistente plek gekregen met behulp van CSS grid containers.
+
+### 21-06-2019
+ALLES WERKT! Bèta-versie compleet, ruim op tijd voor de deadline. Vandaag heb ik de update-functie van de pie chart aangepast zodat hij aangeroepen kan worden vanuit barchart.js (zodat er maar één 'onclick' is voor de sunburst parts). Ook heb ik relevante tekst op de pagina geplaatst. Ik moet nog kleine dingen in de SVG's toevoegen zoals titels, een legenda voor de pie chart en tooltips en as-labels voor de bar chart.

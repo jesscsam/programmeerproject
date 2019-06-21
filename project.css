@@ -18,7 +18,7 @@
 
 .grid-container > div {
   padding: 20px 0;
-  background-color: #c2d8fc;
+  /* background-color: #c2d8fc; */
 }
 
 .select {
@@ -38,4 +38,12 @@
 .pieid {
   display: block;
   margin: auto;
+}
+
+#about {
+  margin-bottom: -200px !important;
+}
+
+#vizallsect {
+  margin-bottom: -200px !important;
 }

@@ -21,20 +21,20 @@
     <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">MPROG Project</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#vizallsect">Visualisation</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            <a class="nav-link js-scroll-trigger" href="#vizallsect">Visualisation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Usage</a>
           </li>
         </ul>
       </div>
@@ -47,6 +47,17 @@
       <p class="lead">A visualisation of adult forum user data</p>
     </div>
   </header>
+
+  <section id="about">
+  <div class="container" id='text'>
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <h2>About this visualisation</h2>
+        <p class="lead">How can we identify individuals at risk of being drawn into online sex work? The spread of online social media enables a greater number of people to be involved into online sex trade; however, detecting deviant behaviors online is limited by the low available of data. To overcome this challenge, covert online ethnography and semi-supervised learning were combined. The data this yielded was used to create this visualization.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 
   <section id="vizallsect">
@@ -65,7 +76,7 @@
               <option value="40-50">40-50</option>
               <option value="50+">50+</option>
           </select>
-        
+
       </div>
       <div id="trail">  </div>
 
@@ -84,20 +95,19 @@
       </div>
 
     </div>
-
   </section>
 
-  <section id="about">
+  <section id="usage">
   <div class="container" id='text'>
     <div class="row">
       <div class="col-lg-8 mx-auto">
-        <h2>About this visualisation</h2>
-        <p class="lead">This is a great place to talk about your webpage. This template is purposefully unstyled so you can use it as a boilerplate or starting point for you own landing page designs! This template features:</p>
+        <h2>How to interact with the data</h2>
+        <p class="lead">Clickety-click, use the following functions to use the visualizations:</p>
         <ul>
-          <li>Clickable nav links that smooth scroll to page sections</li>
-          <li>Responsive behavior when clicking nav links perfect for a one page website</li>
-          <li>Bootstrap's scrollspy feature which highlights which section of the page you're on in the navbar</li>
-          <li>Minimal custom CSS so you are free to explore your own unique design options</li>
+          <li>See risk level per sub group: click on a segment of the outer ring of the sunburst </li>
+          <li>See risk level per age group: select an age group in the dropdown menu. This combines with the sub group you selected! </li>
+          <li>See forum interactions per gender: click on a segment of the inner ring of the sunburst</li>
+          <li>See different forum interactions: choose a type of interaction in the dropdown menu (amount of comments etc.)</li>
         </ul>
       </div>
     </div>
@@ -107,7 +117,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">Jessica Sam, 10752498, UvA Minor Programmeren 2019</p>
     </div>
     <!-- /.container -->
   </footer>
