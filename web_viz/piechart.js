@@ -2,6 +2,10 @@
 function drawPieChart() {
 
     // set the dimensions and margins of the graph
+    // var parentDiv = document.getElementById("pie");
+    // var width = parentDiv.clientWidth;
+    // var height = parentDiv.clientHeight;
+
     var width = 350
     var height = 300
     var margin = 40
@@ -14,6 +18,7 @@ function drawPieChart() {
               .append("svg")
                 .attr("width", width)
                 .attr("height", height)
+                .attr("class", "pieid")
             .append("g")
               .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
@@ -50,15 +55,16 @@ function drawPieChart() {
       updatePie(agegr.value, null);
 
       // If the user clicks a path within the sunburst, update the pie chart
-      var category = d3.select("#sunb").selectAll("path")
-                      .on("click", function(d) { updatePie(agegr.value, d);
-                      });
+      // var category = d3.select("#sunb").selectAll("path")
+      //                 .on("click", function(d) { updatePie(agegr.value, d);
+      //                 });
 
 
       // If the user selects a new agegroup, update the pie chart
       agegr.addEventListener("change", function(d) {
         updatePie(this.value, null)
       });
+
 
 
       function updatePie(agegroup, userchar) {
@@ -91,7 +97,10 @@ function drawPieChart() {
 
            path.exit().remove()
           }
-        })
-    };
 
-drawPieChart();
+          drawPieChart.updatePie = updatePie;
+
+        })
+
+
+    };

@@ -52,4 +52,10 @@ Wel heb ik een legenda kunnen toevoegen aan de sunburst, en 'breadcrumbs': een t
 
 ### 18-06-2019
 Een doorbraak! Het is gelukt om de sunburst te koppelen aan de pie chart. De pie chart functioneert nu naar behoren; hij update wanneer er geklikt wordt in de buitenste ring van de sunburst en wanneer de leeftijdscategorie getoggle'd wordt via het HTML-element. Wanneer je één van beide aanpast, behoudt hij de andere waarde: als je dus leeftijdscategorie '18-25' geselecteerd hebt en in de sunburst op male>heterosexual>dominant klikt, krijg je de risicoverdeling te zien van 18-25jarigen binnen die groep. De update-functie werkt ook naar behoren.
-Ook heb ik een begin gemaakt aan de update-functie voor de bar chart, maar deze werkt nog niet goed. 
+Ook heb ik een begin gemaakt aan de update-functie voor de bar chart, maar deze werkt nog niet goed.
+
+### 19-06-2019
+Update-functie voor de bar chart geschreven, deze werkt nu perfect. Pie chart updatet alleen plotseling *niet* meer na een klik in de sunburst.
+Lang bezig geweest met het Bootstrap Grid systeem om alle elementen op een goede plek op de pagina te krijgen, maar daar snap ik nog niks van.
+
+### 20-06-2019

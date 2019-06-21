@@ -4,8 +4,12 @@ function drawSunburst(){
   d3.json("code/sunjson.json").then(function(dataset){
 
     // dimenstions of the sunburst
-    var width = 410;
-    var height = 410;
+    // var parentDiv = document.getElementById("sunb");
+    // var width = parentDiv.clientWidth;
+    // var height = parentDiv.clientHeight;
+
+    var width = 400;
+    var height = 400;
     var radius = Math.min(width, height) / 2;
 
     // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
@@ -136,6 +140,7 @@ function drawSunburst(){
           .attr("width", width)
           .attr("height", 50)
           .attr("id", "trail");
+          
       // Add the label at the end, for the percentage.
       trail.append("svg:text")
         .attr("id", "endlabel")
@@ -207,12 +212,11 @@ function drawSunburst(){
         w: 95, h: 30, s: 3, r: 3
       };
 
-      var legend = d3.select("#sunb").append("svg:svg")
+      var legend = d3.select("#legend").append("svg:svg")
           .attr("width", li.w)
           .attr("height", d3.keys(colors).length * (li.h + li.s))
-          .attr("transform", function(d) {
-                  return "translate(50,-350)";
-               });
+          .attr("class", "legendid")
+
 
       var g = legend.selectAll("g")
           .data(d3.entries(colors))

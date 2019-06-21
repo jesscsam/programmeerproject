@@ -1,29 +1,41 @@
-#sunb {
-    display: inline-block;
-    padding-left: 100px;
-    padding-right: 100px;
-}
 
-#pie {
-    display: inline-block;
-    padding-left: 100px;
-    padding-right: 20px;
-}
-
-#viz {
-  text-align: center;
-}
-
-#bardiv {
-  text-align: center;
-  margin-top: 100px;
-  margin-bottom: -100px;
-}
 
 #ages {
   width: 150px !important;
+  align: right;
 }
 
 #interactions {
   width: 200px !important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.grid-container > div {
+  padding: 20px 0;
+  background-color: #c2d8fc;
+}
+
+.select {
+  height: 50px
+}
+
+.sunburst {
+  display: block;
+  margin: auto;
+}
+
+.legendid {
+  display: block;
+  margin: auto;
+}
+
+.pieid {
+  display: block;
+  margin: auto;
 }

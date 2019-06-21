@@ -28,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#viz">Visualisation</a>
+            <a class="nav-link js-scroll-trigger" href="#vizallsect">Visualisation</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#about">About</a>
@@ -49,26 +49,30 @@
   </header>
 
 
-  <section id="viz">
-    <div id="viz">
-      <div id="sunb">
+  <section id="vizallsect">
+  <div id="vizalldiv">
 
-      </div>
+    <div class="grid-container">
+      <div id="legend">  </div>
+      <div id="sunb">  </div>
       <div id="pie">
+        <div class="pie">
+          <select class="browser-default custom-select" id="ages">
+              <option selected value="All">Age group (All)</option>
+              <option value="18-25">18-25</option>
+              <option value="25-30">25-30</option>
+              <option value="30-40">30-40</option>
+              <option value="40-50">40-50</option>
+              <option value="50+">50+</option>
+          </select>
+        </div>
+      </div>
+      <div id="trail">  </div>
 
-      </div>
-      <select class="browser-default custom-select" id="ages">
-          <option selected value="All">Age group (All)</option>
-          <option value="18-25">18-25</option>
-          <option value="25-30">25-30</option>
-          <option value="30-40">30-40</option>
-          <option value="40-50">40-50</option>
-          <option value="50+">50+</option>
-      </select>
-    </div>
-    <div id="viz">
+      <div id="middle"></div>
+
       <div id="bardiv">
-      </div>
+      <div class="select">
       <select class="browser-default custom-select" id="interactions">
           <option selected value="Comments">Number of comments</option>
           <option value="Chattime">Minutes spent chatting</option>
@@ -76,7 +80,11 @@
           <option value="Meets">Number of offline meetings attended</option>
           <option value="Pics">Number of profile pictures</option>
         </select>
+      </div>
+      </div>
+
     </div>
+
   </section>
 
   <section id="about">

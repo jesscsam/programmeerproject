@@ -31,10 +31,10 @@ function drawBarChart() {
                         if (d.data.name == "female" || d.data.name == "male"){
                           updateBarChart(d.data.name, sel.value);
                         }
-                        // if (d.data.name == "Dominant" || d.data.name == "Submisive" || d.data.name == "Switch") {
-                        //   drawPieChart();
-                        //   drawPieChart().then().updatePie(agegr.value, d.data.name);
-                      //}
+                        if (d.data.name == "Dominant" || d.data.name == "Submisive" || d.data.name == "Switch") {
+                          drawPieChart();
+                          drawPieChart().updatePie(agegr.value, d.data.name);
+                      }
                       });
 
       // If user selects a different subject, update the bar chart
@@ -44,7 +44,6 @@ function drawBarChart() {
 
 
       function updateBarChart(gender, sel){
-
 
         if (gender == null) {
           var data = dataset['all'][sel]
@@ -118,3 +117,5 @@ function drawBarChart() {
 };
 
 drawBarChart();
+
+drawPieChart();
