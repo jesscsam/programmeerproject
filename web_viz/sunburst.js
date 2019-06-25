@@ -6,7 +6,7 @@ function drawSunburst(){
 
     // Dimenstions of the sunburst
     var width = 400;
-    var height = 400;
+    var height = 500;
     var radius = Math.min(width, height) / 2;
 
     // Breadcrumb dimensions: width, height, spacing, width of tip/tail.
@@ -37,6 +37,18 @@ function drawSunburst(){
                   .attr("id", "container")
                   .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
+    svg.append("text").text("Adult forum user population")
+                          .attr("x", -120)
+                          .attr("y", -230)
+                          .attr("font-family", "Arial")
+                          .attr("font-size", 20)
+
+    svg.append("text").text("By gender, sexual orientation and sexual polarity")
+                          .attr("x", -145)
+                          .attr("y", -210)
+                          .attr("font-family", "Arial")
+                          .attr("font-size", 14)
+
     var partition = d3.partition()
                       .size([2 * Math.PI, radius]);
 
@@ -65,7 +77,7 @@ function drawSunburst(){
           .style('stroke', '#fff')
           .style("fill", function(d) { return colors[d.data.name]; })
           .style("opacity", 1)
-          .on("mouseover", mouseover);
+          .on("mouseover", mouse_over);
 
   // Add the mouseleave handler to the bounding circle
   d3.select("#container").on("mouseleave", mouseleave);
@@ -73,13 +85,14 @@ function drawSunburst(){
   // Initialize legend and breadcrumb trails
   initializeBreadcrumbTrail();
   drawLegend();
+  d3.select("#togglelegend").on("click", toggleLegend);
 
   // Get total size of the tree = value of root node from partition
   totalSize = path.datum().value;
 
 
     // Fade all but the current sequence, and show it in the breadcrumb trail
-    function mouseover(d) {
+    function mouse_over(d) {
 
       var percentage = (100 * d.value / totalSize).toPrecision(3);
       var percentageString = percentage + "%";
@@ -125,7 +138,7 @@ function drawSunburst(){
           .duration(1000)
           .style("opacity", 1)
           .on("end", function() {
-                  d3.select(this).on("mouseover", mouseover);
+                  d3.select(this).on("mouseover", mouse_over);
                 });
 
       d3.select("#explanation")
@@ -218,7 +231,7 @@ function drawSunburst(){
           .attr("width", li.w)
           .attr("height", d3.keys(colors).length * (li.h + li.s))
           .attr("class", "legendid");
-          
+
       // Append a legend element for each data entry
       var g = legend.selectAll("g")
           .data(d3.entries(colors))
@@ -241,6 +254,15 @@ function drawSunburst(){
           .attr("text-anchor", "middle")
           .text(function(d) { return d.key; });
     };
+
+    function toggleLegend() {
+        var legend = d3.select("#legend");
+        if (legend.style("visibility") == "hidden") {
+          legend.style("visibility", "");
+        } else {
+          legend.style("visibility", "hidden");
+        }
+      }
 
   });
 };

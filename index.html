@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <script type="text/javascript" src="web_viz/d3.js"></script>
+    <script src="web_viz/d3-tip.js"></script>
     <title>Online sex work</title>
 
     <!-- Bootstrap core CSS -->
@@ -34,7 +35,7 @@
             <a class="nav-link js-scroll-trigger" href="#vizallsect">Visualisation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Usage</a>
+            <a class="nav-link js-scroll-trigger" href="#usage">Usage</a>
           </li>
         </ul>
       </div>
@@ -59,14 +60,23 @@
   </div>
 </section>
 
-
+<div class="custom-container">
   <section id="vizallsect">
   <div id="vizalldiv">
 
-    <div class="grid-container">
-      <div id="legend">  </div>
-      <div id="sunb">  </div>
-      <div id="pie">
+    <div class="grid-container" >
+
+      <div class="section" id="sunb">
+        <div class="section" style="text-align: center; float: left; padding-left: 50px; padding-top: 50px" >
+          <input type="checkbox" id="togglelegend" name="Legend">
+          <label for="togglelegend">Legend</label>
+          <div id="legend" style="visibility: hidden;">
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+      <div id="pie"> </div>
 
           <select class="browser-default custom-select" id="ages">
               <option selected value="All">Age group (All)</option>
@@ -76,13 +86,32 @@
               <option value="40-50">40-50</option>
               <option value="50+">50+</option>
           </select>
-
       </div>
-      <div id="trail">  </div>
 
-      <div id="middle"></div>
+      <div id="trail">
+        <p class="lead" id="mytext">
+            <strong>Sunburst</strong><br>
+            This data is retrieved from an adult online forum. In the sunburst chart,
+            you can see the how gender, sexual orientation (heterosexual, homosexual,
+            bicurious or bisexual) and sexual polarity (submissive, switch or dominant)
+            are distributed throughout the user base. <br><br>
+            <strong>Pie chart</strong><br>
+            Click on a subgroup (outer ring of the sunburst), and the pie chart will
+            show you the distribution of risk within that group. Apparently, the
+            group with the most at-risk users is female heterosexual switches. If you
+            want, specify it by age group. <br><br>
+            <strong>Bar chart</strong><br>
+            The bar chart describes how active specific users are; it shows
+            the amount of interactions each age group has had with the forum.
+            You can choose to see their minutes spent chatting, amount of comments,
+            advertisements posted, offline meetings attended and profile pictures.
+            Click on a gender (inner ring of the sunburst), and the bar chart will
+            show the data for that specific gender!
+        </p>
+       </div>
 
-      <div id="bardiv">
+      <div class="section">
+      <div id="bardiv"></div>
       <div class="select">
       <select class="browser-default custom-select" id="interactions">
           <option selected value="Comments">Number of comments</option>
@@ -93,9 +122,11 @@
         </select>
       </div>
       </div>
+      </div>
 
     </div>
   </section>
+</div>
 
   <section id="usage">
   <div class="container" id='text'>

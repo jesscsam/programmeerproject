@@ -63,3 +63,7 @@ Alle figuren en elementen op een logische en consistente plek gekregen met behul
 
 ### 21-06-2019
 ALLES WERKT! Bèta-versie compleet, ruim op tijd voor de deadline. Vandaag heb ik de update-functie van de pie chart aangepast zodat hij aangeroepen kan worden vanuit barchart.js (zodat er maar één 'onclick' is voor de sunburst parts). Ook heb ik relevante tekst op de pagina geplaatst. Ik moet nog kleine dingen in de SVG's toevoegen zoals titels, een legenda voor de pie chart en tooltips en as-labels voor de bar chart.
+
+### 25-06-2019
+Vandaag heb ik titels toegevoegd aan alle SVG's en as-labels en een tooltip toegevoegd aan de bar chart, en een legenda toegevoegd an de pie chart. Ook heb ik ervoor gezorgd dat je de legenda van de sunburst nu kunt 'showen' en 'hiden', en dat er maar 4 grid blokjes zijn in plaats van 6 (zodat de legenda van de sunburst in hetzelfde blokje zit als de sunburst zelf). Ook heb ik een stuk beschrijvende tekst toegevoegd. 
+Het begint zo wel een beetje op klaar te lijken!

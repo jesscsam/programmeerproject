@@ -14,6 +14,32 @@ function drawBarChart() {
                   .attr("height", h)
                   .attr("class", "barChart")
 
+
+    svg.append("text").text("Amount of interactions")
+                          .attr("x", 225)
+                          .attr("y", 20)
+                          .attr("font-family", "Arial")
+                          .attr("font-size", 20)
+
+    svg.append("text").text("By gender, type of interaction and age group")
+                          .attr("x", 175)
+                          .attr("y", 40)
+                          .attr("font-family", "Arial")
+                          .attr("font-size", 14)
+
+    svg.append("text").text("age group")
+                          .attr("x", 400)
+                          .attr("y", 240)
+                          .attr("font-family", "Arial")
+                          .attr("font-size", 12)
+
+    svg.append("text").text("amount of interactions")
+                          .attr("x", -170)
+                          .attr("y", 160)
+                          .attr("transform", "rotate(-90)")
+                          .attr("font-family", "Arial")
+                          .attr("font-size", 12)
+
     // Load data
     d3.json("code/barjson.json").then(function(dataset){
 
@@ -46,15 +72,21 @@ function drawBarChart() {
         // Check whether a gender is specified by clicking the sunburst
         if (gender == null) {
           var data = dataset['all'][sel]
+          var color = '#bebada'
+        }
+        else if (gender == 'male') {
+          var data = dataset[gender][sel]
+          var color = '#80b1d3'
         }
         else {
           var data = dataset[gender][sel]
+          var color = '#fccde5'
         };
 
         // Define scales and axes
         var yScale = d3.scaleLinear()
                    .domain([0, d3.max(data, function(d) { return d['mean']; })])
-                   .range([h - 100, 0]);
+                   .range([h - 100, kleinpadding]);
 
          var y_axis = d3.axisLeft()
                        .scale(yScale);
@@ -69,6 +101,13 @@ function drawBarChart() {
          var x_axis = d3.axisBottom()
                         .scale(xScale);
 
+        var tip = d3.tip()
+                          .attr('class', 'd3-tip')
+                           .offset([-10, 0])
+                           .html(function(d) {
+                             return "<span style='font-family:Arial'>" + Math.round(d['mean'] * 10) / 10 + "</span>";
+                           })
+
         // Add rect for each datapoint
         const rects = svg.selectAll("rect")
                  .data(data)
@@ -81,10 +120,12 @@ function drawBarChart() {
                           .attr("height", function(d) {
                             return (h - padding) - yScale(d['mean']) - 50;
                           })
-          
+                          .attr("fill", color);
+
+
         rects.enter().append("rect")
                  .attr("class", "bar")
-                 .attr("fill", "#f9dd6b")
+                 .attr("fill", color)
                  .attr("width", function(d) {
                      return xScale.bandwidth()
                    })
@@ -96,7 +137,12 @@ function drawBarChart() {
                  })
                  .attr("height", function(d) {
                    return (h - padding) - yScale(d['mean']) - 50;
-                 });
+                 })
+                 .on('mouseover', tip.show)
+                 .on('mouseout', tip.hide);
+
+         svg.call(tip);
+
 
           // Draw x axis
            svg.append("g")
