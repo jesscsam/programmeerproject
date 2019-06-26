@@ -1,3 +1,5 @@
+// Creates sunburst visualisation, highly based on Kerry Rodden's example: https://bl.ocks.org/kerryrodden/7090426
+
 
 function drawSunburst(){
 
@@ -106,8 +108,11 @@ function drawSunburst(){
       d3.select("#explanation")
           .style("visibility", "");
 
+
       var sequenceArray = d.ancestors().reverse();
-      sequenceArray.shift(); // remove root node from the array
+
+      sequenceArray.shift(); // Remove root node from the array
+
       updateBreadcrumbs(sequenceArray, percentageString);
 
       // Fade all the segments
@@ -255,6 +260,7 @@ function drawSunburst(){
           .text(function(d) { return d.key; });
     };
 
+    // Add the ability to toggle legend visibility
     function toggleLegend() {
         var legend = d3.select("#legend");
         if (legend.style("visibility") == "hidden") {

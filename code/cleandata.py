@@ -49,7 +49,6 @@ def clean_data(all_data):
     data = data.drop('Risk', axis=1)
     data = data.rename({'Risk2':'Risk'},axis=1)
 
-
     return data
 
 
@@ -57,8 +56,6 @@ def data_for_sunburst(data):
     """
     Creates dataframe to be used to write JSON for sunburst diagram
     """
-
-    #print(data.pivot(index='Gender',columns=['Sexual_orientation', 'Sexual_polarity']))
 
     grouped_df = data.groupby(['Gender', 'Sexual_orientation', 'Sexual_polarity'])
 
@@ -83,7 +80,6 @@ def to_sunburst_json(df, filename):
         child2 = row[2]
         size = row[3]
 
-
         # Make a list of keys
         key_list = []
 
@@ -106,10 +102,6 @@ def to_sunburst_json(df, filename):
                 if item['name'] == parent:
                     if check == False:
                         item['children'].append({"name": child, "children":[]})
-
-
-
-        print(d)
 
     flare = d
 
@@ -155,16 +147,12 @@ def data_for_piechart(data):
     # Get 'all' option for user characteristics categories
     allage_chars_df = pd.DataFrame(data.groupby(['Gender', 'Sexual_orientation', 'Sexual_polarity', 'Risk']).size().reset_index(name = "Count"))
 
-    print(piedict)
-
     for index, row in allage_chars_df.iterrows():
         gender = row[0]
         sex_or = row[1]
         sex_pol = row[2]
         risk = row[3]
         count = row[4]
-
-        print(gender, sex_or, sex_pol, risk, count)
 
         piedict[gender][sex_or][sex_pol]['All'].append({'Risk': risk, 'Count': count})
 
@@ -252,7 +240,6 @@ def data_for_barchart(data):
         json.dump(bardict, outfile)
 
 
-
 def add_age_groups(data):
     """
     Adds age group column to the dataframe
@@ -287,7 +274,6 @@ def create_fake_risk(data):
     """
 
     risks = []
-
 
     # for a specific amount of times, add the different risk values
     for i in range(int(len(data) / 7 * 0.5)):
@@ -336,9 +322,7 @@ if __name__ == "__main__":
     # Clean data
     data = clean_data(all_data)
 
-    # Create sunburst data & write sunburst json
-    #sundata = data_for_sunburst(data)
-
+    # Create data for visualisations
+    sundata = data_for_sunburst(data)
     piedata = data_for_piechart(data)
-
-    #bardata = data_for_barchart(data)
+    bardata = data_for_barchart(data)
