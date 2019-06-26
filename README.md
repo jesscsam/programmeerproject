@@ -23,10 +23,10 @@ This visualisation includes several interactive features, namely:
 
 ### External sources
 * Data source: [Kaggle](https://www.kaggle.com/panoskostakos/online-sex-work)
-* [D3](https://d3js.org/),
+* [D3 version 5](https://d3js.org/)
 * [D3-tip](https://github.com/caged/d3-tip)
 * [Bootstrap](https://getbootstrap.com/)
-* Sunburst design based on Kerry Rodden's [Sequences Sunburst] (https://bl.ocks.org/kerryrodden/7090426)
+* Sunburst design based on Kerry Rodden's [Sequences Sunburst](https://bl.ocks.org/kerryrodden/7090426)
 
 
 ### Copyright
