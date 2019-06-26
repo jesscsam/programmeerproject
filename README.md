@@ -13,10 +13,23 @@ To view the visualisation, click [here](https://jesscsam.github.io/programmeerpr
 
 
 ### Features
+This visualisation includes several interactive features, namely:
+* A toggle-able legend for the sunburst graph. Check the checkbox, and the legend appears.
+* A link between the sunburst and the pie chart: click on a segment in the outermost ring of the sunburst, and the pie chart shows data for that subgroup.
+* A link between the sunburst and the bar chart: click on a segment in the innermost ring of the sunburst, and the bar chart shows data for that gender.
+* A drop-down menu to select an age group to show data for in the pie chart
+* A drop-down menu to select which type of interaction to show data for in the bar chart
 
 
-
-### Sources
+### External sources
 * Data source: [Kaggle](https://www.kaggle.com/panoskostakos/online-sex-work)
-* JS libraries: [D3](https://d3js.org/), [D3-tip](https://github.com/caged/d3-tip)
-*
+* [D3](https://d3js.org/),
+* [D3-tip](https://github.com/caged/d3-tip)
+* [Bootstrap](https://getbootstrap.com/)
+* Sunburst design based on Kerry Rodden's [Sequences Sunburst] (https://bl.ocks.org/kerryrodden/7090426)
+
+
+### Copyright
+For all files except external sources,
+MIT License
+Copyright (c) 2019, Jessica Sam
