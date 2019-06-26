@@ -70,7 +70,7 @@ function drawSunburst(){
           .style("opacity", 0);
 
     // Draw path for each datapoint
-    var path = svg.selectAll('path')
+    var sunbslice = svg.selectAll('path')
         .data(root.descendants())
         .enter()
         .append('path')
@@ -79,10 +79,10 @@ function drawSunburst(){
           .style('stroke', '#fff')
           .style("fill", function(d) { return colors[d.data.name]; })
           .style("opacity", 1)
-          .on("mouseover", mouse_over);
+          .on("mouseover", sunbMouseOver);
 
   // Add the mouseleave handler to the bounding circle
-  d3.select("#container").on("mouseleave", mouseleave);
+  d3.select("#container").on("mouseleave", sunbMouseLeave);
 
   // Initialize legend and breadcrumb trails
   initializeBreadcrumbTrail();
@@ -90,11 +90,11 @@ function drawSunburst(){
   d3.select("#togglelegend").on("click", toggleLegend);
 
   // Get total size of the tree = value of root node from partition
-  totalSize = path.datum().value;
+  totalSize = sunbslice.datum().value;
 
 
     // Fade all but the current sequence, and show it in the breadcrumb trail
-    function mouse_over(d) {
+    function sunbMouseOver(d) {
 
       var percentage = (100 * d.value / totalSize).toPrecision(3);
       var percentageString = percentage + "%";
@@ -108,10 +108,13 @@ function drawSunburst(){
       d3.select("#explanation")
           .style("visibility", "");
 
+      try {
+        var sequenceArray = d.ancestors().reverse();
+        sequenceArray.shift(); // Remove root node from the array
+      }
+      catch(err){
 
-      var sequenceArray = d.ancestors().reverse();
-
-      sequenceArray.shift(); // Remove root node from the array
+      }
 
       updateBreadcrumbs(sequenceArray, percentageString);
 
@@ -128,7 +131,7 @@ function drawSunburst(){
     };
 
     // Restore everything to full opacity when moving off the visualization
-    function mouseleave(d) {
+    function sunbMouseLeave(d) {
 
       // Hide the breadcrumb trail
       d3.select("#trail")
@@ -143,7 +146,7 @@ function drawSunburst(){
           .duration(1000)
           .style("opacity", 1)
           .on("end", function() {
-                  d3.select(this).on("mouseover", mouse_over);
+                  d3.select(this).on("mouseover", sunbMouseOver);
                 });
 
       d3.select("#explanation")

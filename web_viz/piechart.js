@@ -84,43 +84,23 @@ function drawPieChart() {
             var data_ready = pie(dataset[userchar.parent.parent.data.name][userchar.parent.data.name][userchar.data.name][agegroup])
           };
 
-          var total = 0;
-          data_ready.forEach(function(d){ total += d.data.Count });
-
-          function getPercent(d){
-              return (d.endAngle-d.startAngle > 0.2 ?
-                  Math.round(1000*(d.endAngle-d.startAngle)/(Math.PI*2))/10+'%' : '');
-            }
-
           // Join new data
-          const pathpie = svgPie.selectAll("path")
+          const slices = svgPie.selectAll("path")
                           .data(data_ready);
 
           // Update existing arcs
-          pathpie.transition().duration(200).attrTween("d", arcTween);
+          slices.transition().duration(200).attrTween("d", arcTween);
 
           // Enter new arcs
-          pathpie.enter().append("path")
+          slices.enter().append("path")
               .attr('fill', function(d){ return colors[d.data.Risk]})
               .attr("d", arc)
               .attr("stroke", "white")
               .attr("stroke-width", "6px")
               .each(function(d) { this._current = d.data.Count; })
 
-
-          pathpie.enter().append("text")
-                .attr("id", "textlabels")                              //add a label to each slice
-                .attr("transform", function(d) {                    //set the label's origin to the center of the arc
-                //we have to make sure to set these before calling arc.centroid
-                d.innerRadius = 0;
-                d.outerRadius = radius;
-                return "translate(" + arc.centroid(d) + ")";        //this gives us a pair of coordinates like [50, 50]
-            })
-            .attr("text-anchor", "middle")                          //center the text on it's origin
-            .text(function(d, i) { return getPercent(d); });      //get the label from our original data array
-
           // Remove unnecessary arcs
-           pathpie.exit().remove()
+           slices.exit().remove()
 
           // again rebind for legend
           var legendG = svgPie.selectAll(".legend") // note appending it to mySvg and not svg to make positioning easier

@@ -102,11 +102,11 @@ function drawBarChart() {
                         .scale(xScale);
 
         var tip = d3.tip()
-                          .attr('class', 'd3-tip')
-                           .offset([-10, 0])
-                           .html(function(d) {
-                             return "<span style='font-family:Arial'>" + Math.round(d['mean'] * 10) / 10 + "</span>";
-                           })
+                    .attr('class', 'd3-tip')
+                     .offset([-10, 0])
+                     .html(function(d) {
+                       return "<span style='font-family:Arial'>" + Math.round(d['mean'] * 10) / 10 + "</span>";
+                     })
 
         // Add rect for each datapoint
         const rects = svg.selectAll("rect")
