@@ -67,3 +67,6 @@ ALLES WERKT! Bèta-versie compleet, ruim op tijd voor de deadline. Vandaag heb i
 ### 25-06-2019
 Vandaag heb ik titels toegevoegd aan alle SVG's en as-labels en een tooltip toegevoegd aan de bar chart, en een legenda toegevoegd an de pie chart. Ook heb ik ervoor gezorgd dat je de legenda van de sunburst nu kunt 'showen' en 'hiden', en dat er maar 4 grid blokjes zijn in plaats van 6 (zodat de legenda van de sunburst in hetzelfde blokje zit als de sunburst zelf). Ook heb ik een stuk beschrijvende tekst toegevoegd. 
 Het begint zo wel een beetje op klaar te lijken!
+
+### 26-06-2019 
+Vandaag heb ik lang geprobeerd een tooltip of überhaupt een weergave van percentages toe te voegen aan de pie chart, maar omdat de percentages niet in mijn data zaten was het te moeilijk om nog voor elkaar te krijgen. Verder heb ik code gecleaned, een nieuwe README geschreven (de vorige readme was eigenlijk mijn proposal) en begonnen aan het report. Klaar! 
