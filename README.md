@@ -8,6 +8,8 @@ To view the visualisation, click [here](https://jesscsam.github.io/programmeerpr
 
 ### Screenshots
 
+![screenshot 1](https://github.com/jesscsam/programmeerproject/blob/master/pictures/screenshot1.png)
+![screenshot 2](https://github.com/jesscsam/programmeerproject/blob/master/pictures/screenshot2.png)
 
 
 ### Features
