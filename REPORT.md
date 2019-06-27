@@ -33,7 +33,7 @@ So, the main function gets called on pageload. There are several cases in which 
 Because there can only be one `onclick` function for the sunburst I chose to call `updatePie`, which is actually a nested function, from within barchart.js. It ain't pretty (or so I've heard), but it gets the job done.
 
 ##### HTML & CSS
-My website is a one-page based on a [Bootstrap](https://getbootstrap.com/) template. All additional html is written in `index.html` and all additional styling in `project.css`. I used CSS grid containers to align the visualizations on my page.
+My website is a one-page based on a [Bootstrap](https://startbootstrap.com/templates/scrolling-nav/) template. All additional html is written in `index.html` and all additional styling in `project.css`. I used CSS grid containers to align the visualizations on my page.
 
 
 ## Challenges
@@ -41,7 +41,7 @@ My website is a one-page based on a [Bootstrap](https://getbootstrap.com/) templ
 As I am notoriously bad at making decisions, it took me a long time to actually choose a dataset to work with. I felt like there was too much at stake: what if, after working on it for a few days, the data proves unsuitable for my visualisations? I found datasets that I for sure believed to be suitable, but very boring. I'm happy that I finally found data on a topic that interests me greatly - as I am not sure that I would've enjoyed this process if I didn't. ;-)
 
 ##### JSON formatting
-The fist challenge I came across had to do with structuring the data to be used for the visualisations. I spent many days on this. I knew what I wanted to show, but what I didn't know was that specific D3 visualisations require JSON formatted in a specific way. So after formatting the data into JSON that I felt was 'logical', I quickly learnt that D3 wasn't able to read it. After a lot of Googling, it still took me quite some time to put the data together the right way.
+The first challenge I came across had to do with structuring the data to be used for the visualisations. I spent many days on this. I knew what I wanted to show, but what I didn't know was that specific D3 visualisations require JSON formatted in a specific way. So after formatting the data into JSON that I felt was 'logical', I quickly learnt that D3 wasn't able to read it. After a lot of Googling, it still took me quite some time to put the data together the right way.
 
 ##### Splitting functions
 Each of my JavaScript files is basically one large function. I would've preferred splitting them up more according to their functions, or at least have the `update` function outside of the main function. I tried this a couple of times, but it would mean copying and pasting a lot of D3 code. Therefore, I chose to have everything nested within one function, to have all variables easily available to me.
@@ -53,12 +53,11 @@ The final product does not differ much from what I outlined in my proposal. In f
 An important choice I made is the fact dat I faked the data on 'risk'. This makes my pie chart fully fictional, but because this assignment is for the actual *visualisation*, I cared more about actually having something to show. Because the original dataset had 28,000 'unknown_risk' entries, I randomly changed those to high, low and no risk, leaving some unknown, too. At first I thought about judging risk levels myself, for example: `for all entries that are male, homosexual and switch, give 50% of them high_risk, 30% low_risk` etcetera. This, however, would mean looping over the data far too much. Also, ethically, I thought this would go too far. So random risk assignment it was!
 
 ##### Other choices
-All other choices I've made during the course of this project are because I either outlined the idea in my proposal, or because of practical matters. I chose for a one-page website because that is how I wanted it from the start. Or for example, I would've liked the pie chart to also be able to show risk data if you click on a partition within the inner or middle ring of the sunburst, but I know I couldn't've been able to create JSON for that in the time that I had. 
-
+All other choices I've made during the course of this project are because I either outlined the idea in my proposal, or because of practical matters. I chose for a one-page website because that is how I wanted it from the start. Or for example, I would've liked the pie chart to also be able to show risk data if you click on a partition within the inner or middle ring of the sunburst, but I know I couldn't've been able to create JSON for that in the time that I had.
 
 
 ## Future adjustments & reflection
 
-If I had some more time, I would have included tooltips or percentage labels in the pie chart. I forgot about adding that for very long, and because percentages are not included in my JSON (only raw numbers), it didn't manage to implement it in time. And of course, there are always i's to dot - like actually spelling 'submissive' right (the data says 'Submisive'). It would've been an easy fix, but I just never did it.
+If I had some more time, I would have included tooltips or percentage labels in the pie chart. I forgot about adding that for very long, and because percentages are not included in my JSON (only raw numbers), I didn't manage to implement it in time. And of course, there are always i's to dot - like actually spelling 'submissive' right (the data says 'Submisive'). It would've been an easy fix, but I just never did it.
 
 All in all, I really enjoyed focusing entirely on one project for a month. It's a real deep dive into JavaScript and D3, but it's nice to have built it all yourself (or with a little help from StackOverflow of course) and I'm proud of the result.
