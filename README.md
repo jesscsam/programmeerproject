@@ -5,6 +5,7 @@ Jessica Sam, 10752498
 ### Description
 A visualisation of user data from a European adult online forum. This data includes user characteristics and an AI-calculated risk factor, showing how likely that individual is to enter into online sex trade.
 To view the visualisation, click [here](https://jesscsam.github.io/programmeerproject/) or on the title above.
+I've also created a product video, which can be viewed [by clicking here](https://youtu.be/s2oRaZQj_0g).
 
 ### Screenshots
 
